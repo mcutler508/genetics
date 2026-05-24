@@ -505,6 +505,61 @@ export const geneticMarkers: GeneticMarker[] = [
   { id: "g_ucp2", gene: "UCP2", rsNumber: "rs659366", category: "Mitochondrial Function", whatItAffects: "Mitochondrial uncoupling", userResult: "CC" },
 ];
 
+/**
+ * Plain-English descriptions of what each gene does, keyed by gene symbol.
+ * Sourced from the report's prose sections — only includes genes the report
+ * actually interpreted. Per PRD §12.4: describes the gene's general role,
+ * not a clinical claim about the user's specific genotype.
+ */
+export const GENE_EXPLANATIONS: Record<string, string> = {
+  APOE:
+    "APOE codes for a protein that helps clear cholesterol particles from your bloodstream. Different versions affect how efficiently your liver removes LDL and 'remnant' particles, and how strongly your cholesterol responds to saturated fat in your diet.",
+  LDLR:
+    "LDLR is the LDL receptor — the docking site on your liver cells that pulls LDL particles out of circulation. The more receptors and the better they work, the lower your LDL and ApoB tend to stay.",
+  APOB:
+    "APOB is the structural backbone of every LDL particle. Variants in this gene influence how many ApoB-containing particles your liver produces, which directly affects atherogenic particle burden regardless of cholesterol content.",
+  CETP:
+    "CETP shuttles cholesterol between HDL ('good') and LDL ('bad') particles. Variants change the balance of where cholesterol ends up — affecting HDL levels and how cholesterol is distributed across particle types.",
+  PCSK9:
+    "PCSK9 regulates how many LDL receptors are available on your liver cells. High activity removes receptors and raises LDL; the medications that lower LDL most dramatically work by blocking PCSK9.",
+  SORT1:
+    "SORT1 influences how your liver packages and releases lipoprotein particles into the bloodstream. Variants can mean your system produces more LDL particles than average.",
+  HMGCR:
+    "HMGCR is the rate-limiting enzyme in cholesterol synthesis — the same enzyme that statin medications target. Variants influence how much cholesterol your liver makes on its own, independent of diet.",
+  FTO:
+    "FTO influences appetite signaling, satiety after meals, and overall energy intake regulation. Variants can affect hunger cues and how full you feel after eating.",
+  MTNR1B:
+    "MTNR1B is the melatonin receptor expressed on pancreatic beta cells. Because melatonin can suppress insulin release, variants in this gene tie your sleep-wake cycle directly to morning glucose levels and meal timing.",
+  GCK:
+    "GCK encodes glucokinase, the enzyme your liver and pancreas use to sense and process glucose. Variants can shift the threshold at which insulin gets released, affecting fasting and post-meal glucose handling.",
+  PPARG:
+    "PPARG controls fat cell development and how sensitive your fat tissue is to insulin. When fat cells respond less well to insulin, glucose handling shifts more onto your liver and muscle.",
+  SLC2A2:
+    "SLC2A2 encodes GLUT2, the glucose transporter your liver uses to sense blood sugar. Variants can delay the liver's glucose detection, contributing to higher post-meal glucose spikes.",
+  TCF7L2:
+    "TCF7L2 is one of the strongest known genetic predictors of type 2 diabetes risk. It influences insulin production and beta-cell function in the pancreas.",
+  MTHFR:
+    "MTHFR is a key enzyme in the methylation cycle — the pathway that processes folate, recycles homocysteine, and supports DNA repair and neurotransmitter production. Variants can reduce enzyme efficiency, which is why methylated B-vitamins (instead of folic acid) are often suggested.",
+  TF:
+    "TF (transferrin) is the protein that carries iron through your bloodstream to where it's needed. Variants affect transport efficiency, influencing both iron storage (ferritin) and functional iron availability.",
+  CYP1A2:
+    "CYP1A2 is the liver enzyme that breaks down about 95% of the caffeine you consume. Variants make you a faster or slower caffeine metabolizer — slow metabolizers feel effects (and sleep disruption) for much longer.",
+  CYP2A6:
+    "CYP2A6 handles secondary caffeine breakdown — clearing the downstream metabolites after CYP1A2 does the primary work. Variants extend or shorten how long stimulant effects linger.",
+  CLOCK:
+    "CLOCK is the master regulator of your circadian rhythm. Variants can shift you toward being a natural night owl or morning person and influence how easily your internal clock aligns with the 24-hour day.",
+  NR3C1:
+    "NR3C1 encodes the glucocorticoid receptor — the docking site for cortisol in nearly every tissue in your body. Variants change how sensitively your cells respond to cortisol's regulatory signals.",
+  ADRB2:
+    "ADRB2 is the beta-2 adrenergic receptor — the docking site for adrenaline and noradrenaline. Variants influence how strongly your 'fight or flight' system responds to stress.",
+  PPARGC1A:
+    "PPARGC1A regulates the building of new mitochondria — the cellular power plants that produce energy. Variants affect how efficiently your cells recover and rebuild after physical or mental stress.",
+};
+
+export function getGeneExplanation(gene: string): string | undefined {
+  return GENE_EXPLANATIONS[gene];
+}
+
 export const providerQuestions = [
   {
     id: "q_insulin",

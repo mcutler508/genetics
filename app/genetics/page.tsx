@@ -1,16 +1,22 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Search } from "lucide-react";
+import { BookOpen, ChevronDown, Search } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageHeader } from "@/components/portal/page-header";
 import { Disclaimer } from "@/components/portal/disclaimer";
-import { geneticMarkers } from "@/lib/mock-data";
+import { GenotypeChip } from "@/components/portal/genotype-chip";
+import {
+  geneticMarkers,
+  getGeneExplanation,
+  GENE_EXPLANATIONS,
+} from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
 
 export default function GeneticsPage() {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [expanded, setExpanded] = useState<string | null>(null);
 
   const categories = useMemo(() => {
     const set = new Set(geneticMarkers.map((g) => g.category));
@@ -33,6 +39,8 @@ export default function GeneticsPage() {
     });
   }, [query, activeCategory]);
 
+  const glossaryCount = Object.keys(GENE_EXPLANATIONS).length;
+
   return (
     <>
       <PageHeader
@@ -40,6 +48,20 @@ export default function GeneticsPage() {
         title="Genetic appendix"
         description="Your raw genotype results across 10 biological categories. Genetics describe tendencies — not certainties. Always interpret alongside labs, history, and a provider."
       />
+
+      {/* Glossary callout */}
+      <div className="mb-4 flex items-start gap-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm">
+        <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+        <p className="text-foreground">
+          <span className="font-medium">Interactive glossary.</span>{" "}
+          <span className="text-muted-foreground">
+            Hover any result code to read what those DNA letters mean. Click
+            any highlighted row to read a plain-English description of what
+            that gene does — {glossaryCount} of {geneticMarkers.length} genes
+            are interpreted in your report.
+          </span>
+        </p>
+      </div>
 
       {/* Search + categories */}
       <Card className="mb-4">
@@ -84,6 +106,7 @@ export default function GeneticsPage() {
             <table className="w-full text-sm">
               <thead className="bg-muted/40 text-xs uppercase tracking-wider text-muted-foreground">
                 <tr>
+                  <th className="w-8 px-2 py-3" aria-label="Expand" />
                   <th className="px-5 py-3 text-left font-medium">Gene</th>
                   <th className="px-5 py-3 text-left font-medium">RS Number</th>
                   <th className="px-5 py-3 text-left font-medium">Category</th>
@@ -97,34 +120,30 @@ export default function GeneticsPage() {
                 {filtered.length === 0 ? (
                   <tr>
                     <td
-                      colSpan={5}
+                      colSpan={6}
                       className="px-5 py-10 text-center text-sm text-muted-foreground"
                     >
                       No matches for that search.
                     </td>
                   </tr>
                 ) : (
-                  filtered.map((g) => (
-                    <tr key={g.id} className="hover:bg-muted/30">
-                      <td className="px-5 py-3 font-mono text-xs font-semibold text-foreground">
-                        {g.gene}
-                      </td>
-                      <td className="px-5 py-3 font-mono text-xs text-muted-foreground">
-                        {g.rsNumber}
-                      </td>
-                      <td className="px-5 py-3 text-xs text-muted-foreground">
-                        {g.category}
-                      </td>
-                      <td className="px-5 py-3 text-foreground">
-                        {g.whatItAffects}
-                      </td>
-                      <td className="px-5 py-3">
-                        <span className="inline-flex rounded-md bg-muted/60 px-2 py-0.5 font-mono text-xs font-medium text-foreground">
-                          {g.userResult}
-                        </span>
-                      </td>
-                    </tr>
-                  ))
+                  filtered.map((g) => {
+                    const explanation = getGeneExplanation(g.gene);
+                    const hasExplanation = !!explanation;
+                    const isOpen = expanded === g.id;
+                    return (
+                      <ExpandableRow
+                        key={g.id}
+                        marker={g}
+                        explanation={explanation}
+                        hasExplanation={hasExplanation}
+                        isOpen={isOpen}
+                        onToggle={() =>
+                          setExpanded(isOpen ? null : g.id)
+                        }
+                      />
+                    );
+                  })
                 )}
               </tbody>
             </table>
@@ -137,11 +156,105 @@ export default function GeneticsPage() {
       </p>
 
       <Disclaimer>
-        Genotype results indicate tendencies that may shape how systems respond
-        — they do not determine outcomes. "—" means the variant was not
-        successfully called or was not part of this panel. This is not a
-        clinical genetic test.
+        Glossary descriptions explain what each gene generally does, based on
+        established research — they are not interpretations of your specific
+        genotype. "—" means the variant was not successfully called or was not
+        part of this panel. This is not a clinical genetic test.
       </Disclaimer>
+    </>
+  );
+}
+
+function ExpandableRow({
+  marker,
+  explanation,
+  hasExplanation,
+  isOpen,
+  onToggle,
+}: {
+  marker: (typeof geneticMarkers)[number];
+  explanation: string | undefined;
+  hasExplanation: boolean;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <>
+      <tr
+        className={cn(
+          "transition-colors",
+          hasExplanation
+            ? "cursor-pointer hover:bg-primary/5"
+            : "hover:bg-muted/30",
+          isOpen && "bg-primary/5"
+        )}
+        onClick={hasExplanation ? onToggle : undefined}
+      >
+        <td className="w-8 px-2 py-3 text-muted-foreground">
+          {hasExplanation && (
+            <button
+              type="button"
+              aria-label={isOpen ? "Collapse" : "Expand"}
+              aria-expanded={isOpen}
+              onClick={(e) => {
+                e.stopPropagation();
+                onToggle();
+              }}
+              className="flex h-6 w-6 items-center justify-center rounded-md text-primary hover:bg-primary/10"
+            >
+              <ChevronDown
+                className={cn(
+                  "h-4 w-4 transition-transform duration-200",
+                  isOpen && "rotate-180"
+                )}
+              />
+            </button>
+          )}
+        </td>
+        <td
+          className={cn(
+            "px-5 py-3 font-mono text-xs font-semibold text-foreground",
+            hasExplanation && "underline-offset-4 decoration-primary/30 group-hover:underline"
+          )}
+        >
+          {marker.gene}
+        </td>
+        <td className="px-5 py-3 font-mono text-xs text-muted-foreground">
+          {marker.rsNumber}
+        </td>
+        <td className="px-5 py-3 text-xs text-muted-foreground">
+          {marker.category}
+        </td>
+        <td className="px-5 py-3 text-foreground">{marker.whatItAffects}</td>
+        <td className="px-5 py-3">
+          <GenotypeChip value={marker.userResult} />
+        </td>
+      </tr>
+      {isOpen && hasExplanation && (
+        <tr className="bg-primary/5">
+          <td />
+          <td colSpan={5} className="px-5 pb-5 pt-1">
+            <div className="rounded-lg border border-primary/20 bg-card px-5 py-4">
+              <div className="flex items-baseline gap-2">
+                <BookOpen className="h-3.5 w-3.5 shrink-0 text-primary" />
+                <p className="editorial-eyebrow text-primary">
+                  About {marker.gene}
+                </p>
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-foreground">
+                {explanation}
+              </p>
+              <p className="mt-3 text-xs italic text-muted-foreground">
+                This describes the gene's role in research generally — it
+                does not interpret your specific{" "}
+                <span className="font-mono not-italic">{marker.userResult}</span>{" "}
+                result. Discuss your full genetic context with a qualified
+                provider before drawing conclusions.
+              </p>
+            </div>
+          </td>
+        </tr>
+      )}
     </>
   );
 }

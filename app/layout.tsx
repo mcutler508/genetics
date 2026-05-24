@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/portal/sidebar";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,12 +38,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background text-foreground">
-        <div className="flex min-h-screen">
-          <Sidebar />
-          <main className="flex-1 px-6 py-10 md:px-14 md:py-14">
-            <div className="mx-auto max-w-6xl">{children}</div>
-          </main>
-        </div>
+        <TooltipProvider delayDuration={150}>
+          <div className="flex min-h-screen">
+            <Sidebar />
+            <main className="flex-1 px-6 py-10 md:px-14 md:py-14">
+              <div className="mx-auto max-w-6xl">{children}</div>
+            </main>
+          </div>
+        </TooltipProvider>
       </body>
     </html>
   );
