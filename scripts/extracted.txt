@@ -1,0 +1,757 @@
+IMPACT HEALTH SYSTEMS BLUEPRINT
+IMPACT HEALTH SYSTEMS BLUEPRINT
+Powered by True North Operating System
+Current: Stacey Cutler
+YOUR 12-WEEK SYSTEMS BLUEPRINT
+Labs show what’s active right now across your core systems. Your DNA adds context so we can build a 12‑week plan that fits
+your body, not a generic template.
+SYSTEM FOCUS (12-WEEK GOALS)
+PRIMARY BIOMARKER
+Glucose & Insulin Control (Fasting Insulin)
+8.92 μIU/mL → Goal: 2–5 μIU/mL (optimal)
+SECONDARY SYSTEM FOCUS
+Iron Status (Ferritin)
+21.7 ng/mL → Goal: 50–150 ng/mL (optimal)
+SUPPORTING SYSTEMS
+Lipoprotein & Cardiovascular Risk (ApoB)
+81 mg/dL Goal: < 60 mg/dL (optimal)
+YOUR SYSTEMS & GENETICS 	YOUR CORE SUPPORT
+NUTRITION ARCHETYPE
+Carb Controller
+Stabilizes blood sugar and insulin so your body can shift into
+fat-burning mode.
+KEY GENETIC MARKERS
+System 	Genes 	Pattern
+Systemic
+Inflammation
+CRP,
+IL-10
+CC, TT
+Glucose & Insulin
+Control
+FTO,
+SLC2A2
+AA, AG
+Lipoprotein Risk 	APOE
+(ε3/ε4),
+LDLR
+CT, TC
+Foundational
+Support
+VDR,
+DHCR7
+TC, TT
+SUPPLEMENT DASHBOARD
+Supplement 	Daily Dose
+Omega-3s 	2–3 g EPA/DHA
+Berberine 	500 mg 2–3×
+Methylated B 	1 cap
+Soluble Fiber 	7–10 g
+Iron 	Per provider
+Page 1
+
+-- 1 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+Methylation 	MTHFR
+A1298C
+TG
+Page 2
+
+-- 2 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+HOW WE USE YOUR LABS & DNA
+Labs show what’s active right now and set the focus for this 12-week block across five key systems:
+systemic inflammation, glucose & insulin control, lipoprotein & cardiovascular risk, methylation &
+cellular repair, and foundational support (vitamin D and related factors). Your DNA adds context,
+helping explain why certain markers look the way they do and how to fine-tune your nutrition, supplements,
+and recovery. Together, they create a plan that's built for your body, not a generic template.
+This report distinguishes between clinical ranges (disease detection) and optimal ranges (performance and
+long-term health). Recommendations are based on optimizing physiology, not just avoiding disease.
+PRIMARY SYSTEM FOCUS: GLUCOSE & INSULIN CONTROL (FASTING
+INSULIN)
+--
+Current (Fasting Insulin): Current: 8.92 μIU/mL
+Target (Fasting Insulin): 2–5 μIU/mL (optimal)
+Why It Matters
+Insulin is a key metabolic lever. When fasting insulin is elevated, your body is stuck in storage mode —
+making it harder to burn fat, regulate appetite, and sustain energy between meals. Over time, elevated insulin
+drives insulin resistance, which compounds metabolic dysfunction and increases the risk of type 2 diabetes,
+cardiovascular disease, and chronic inflammation. We address it now because insulin is active — it’s the
+main focus of this block.
+What Happens If We Don't
+Elevated insulin quietly works against you. Fat loss stalls, hunger becomes harder to manage, and energy
+fluctuates throughout the day. Over time, the pancreas works harder to compensate, and the downstream
+effects — weight gain, increased inflammation, hormonal disruption — become harder to reverse. We
+address this early because the longer insulin stays elevated, the more entrenched the metabolic pattern
+becomes.
+How We’re Addressing It
+Nutrition structure designed to reduce insulin demand — emphasizing protein, fiber, and healthy fats while
+managing carbohydrate timing and quality. Berberine to directly improve insulin sensitivity at the cellular level.
+Movement and meal timing strategies to support glucose clearance without relying on more insulin.
+Genetic Context: Glucose & Insulin Control (Fasting Insulin)
+Your genetic pattern shapes how your body manages insulin signaling, glucose uptake, and metabolic flexibility.
+These variants influence how efficiently your cells respond to insulin, how your pancreas regulates secretion, and
+how your appetite and energy balance systems interact. The genes below help explain where those sensitivities
+may exist and why glucose and insulin optimization is being prioritized now.
+Gene 	RS Number 	Pathway Role 	Your Result
+TCF7L2 	rs7903146 	Beta-cell function & insulin secretion 	CC
+Page 3
+
+-- 3 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+FTO 	rs9939609 	Energy balance & appetite regulation 	AA
+MC4R 	rs17782313 	Central appetite signaling 	TT
+SLC2A2 	rs5400 	Glucose transporter expression 	AG
+PPARG 	rs1801282 	Insulin sensitivity & fat metabolism 	CG
+MTNR1B 	rs10830963 	Melatonin receptor & glucose
+metabolism CG
+SLC2A2 (GLUT2) (rs5400) | Effect Allele: rs5400 = A
+SLC2A2 encodes the GLUT2 glucose transporter responsible for hepatic glucose sensing. Your pattern is
+associated with a tendency toward impaired glucose detection by the liver, which can delay the appropriate
+insulin response and contribute to post-meal glucose spikes.
+PPARG (rs1801282) | Effect Allele: rs1801282 = C
+PPARG regulates fat cell differentiation and peripheral insulin sensitivity. Your pattern is associated with a
+tendency toward reduced insulin sensitivity in adipose tissue, meaning your fat cells are less responsive to
+insulin signaling — which can shift glucose handling toward the liver and muscle, increasing overall metabolic
+demand.
+FTO (rs9939609) | Effect Allele: rs9939609 = A
+FTO influences energy intake regulation and metabolic efficiency. Your pattern is associated with a tendency
+toward increased hunger signaling and reduced post-meal satiety, which can drive higher caloric intake and
+place additional demand on your glucose-insulin system.
+MTNR1B (rs10830963) | Effect Allele: rs10830963 = G
+Your genetic pattern in MTNR1B is associated with a tendency toward elevated fasting glucose linked to
+melatonin signaling. This gene encodes the melatonin receptor expressed on pancreatic beta cells, and this
+variation can mean melatonin has a stronger-than-average suppressive effect on insulin secretion — which is
+why fasting glucose may be higher in the morning and why meal timing relative to sleep can influence your
+glucose control.
+GCK (rs1799884) | Effect Allele: rs1799884 = T
+GCK encodes glucokinase, one of the primary enzymes responsible for sensing and processing glucose in the
+liver and pancreas. Your genetic pattern is associated with a tendency toward a higher threshold for glucose
+sensing, meaning insulin response may not be triggered as efficiently until blood sugar is slightly higher. In your
+pattern, this helps explain why fasting glucose or post-meal glucose handling may drift upward more easily
+under stress, disrupted sleep, or inconsistent nutrition, reinforcing the plan's focus on steady glucose control
+and metabolic consistency.
+--
+--
+SECONDARY SYSTEM FOCUS: IRON STATUS (FERRITIN)
+--
+Current (Ferritin): Current: 21.7 ng/mL
+Target (Ferritin): 50–150 ng/mL (optimal)
+Why It Matters
+Page 4
+
+-- 4 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+Ferritin reflects your body’s iron storage. While it’s not the primary focus this block, iron that’s out of range —
+too low or too high — quietly undermines oxygen delivery, energy production, and recovery capacity.
+What Happens If We Don't
+If we address the primary target but ignore iron status, fatigue and poor recovery may persist regardless of
+other improvements. Iron imbalances compound over time and make every other intervention less effective.
+How We’re Addressing It
+Iron management is included based on your current levels and genetic risk profile. The trend is worth
+rechecking at 12 weeks to confirm response and adjust strategy.
+Genetic Context: Iron Status (Ferritin)
+Your genetic pattern influences how your body absorbs, transports, and stores iron. These variants can explain
+why some people accumulate iron more readily or struggle with iron utilization. The genes below help explain
+where those sensitivities may exist and why iron status management is being prioritized now.
+Gene 	RS Number 	Pathway Role 	Your Result
+HFE 	rs1800562,
+rs1799945
+Iron absorption regulation 	GG
+TF 	rs3811647 	Iron transport protein 	AG
+TF (rs3811647) | Effect Allele: rs3811647 = G
+Your genetic pattern in TF is associated with a tendency toward altered transferrin levels. Transferrin is the
+primary iron transport protein in the blood, and this variation can affect how efficiently iron is delivered to
+tissues — influencing both ferritin storage levels and functional iron availability.
+Page 5
+
+-- 5 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+Page 6
+
+-- 6 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+SUPPORTING SYSTEM: CARDIOVASCULAR RISK
+Current (ApoB): Current: 81 mg/dL
+Target (ApoB): < 60 mg/dL (optimal)
+Why It Matters
+ApoB counts the number of atherogenic particles in your blood — the vehicles that deposit cholesterol into
+arterial walls. It’s a more accurate predictor of cardiovascular risk than LDL cholesterol alone. Even when
+other markers look normal, elevated ApoB means your vascular system is under pressure. We address it now
+because cardiovascular risk compounds silently, and ApoB responds well to targeted nutrition and lifestyle
+intervention.
+What Happens If We Don’t
+Elevated ApoB is silent — you won’t feel it until significant damage is done. Plaque accumulates slowly but
+relentlessly, narrowing arteries and increasing the risk of heart attack and stroke. Unlike inflammation or
+insulin, there are no obvious symptoms to alert you. We address this now because the window for prevention
+is wide open, and the interventions are straightforward.
+How We’re Addressing It
+Targeted nutrition to reduce atherogenic particle production — emphasizing soluble fiber to increase LDL
+receptor activity, omega-3s to improve lipid metabolism, and dietary fat quality optimization. Your genetic
+profile informs how aggressively we manage saturated fat intake and whether additional interventions may be
+warranted.
+Genetic Context: Lipoprotein & Cardiovascular Risk (ApoB)
+ApoB reflects the number of atherogenic lipoprotein particles circulating in the blood. Particle burden is
+shaped by how many particles are produced, how efficiently they are cleared, and how strongly dietary inputs
+influence that balance.
+Gene 	RS Number 	Pathway Role 	Your Result
+APOE 	rs429358 + rs7412 	Lipoprotein clearance & remnant
+handling CT
+LDLR 	rs688 	LDL receptor recognition & particle
+uptake TC
+APOB 	rs693 	ApoB particle assembly & production 	AG
+CETP 	rs708272 	Lipid exchange between lipoproteins 	AG
+LPA 	rs3798220,
+rs10455872
+Lipoprotein(a) particle burden 	TT
+PCSK9 	rs11591147 	LDL clearance regulation 	GG
+HMGCR 	rs17238540 	Statin pathway / cholesterol synth 	TT
+ANGPTL3 	rs1748195 	Triglyceride regulation 	CG
+APOB2 	rs1042031 	ApoB particle production 	CC
+Page 7
+
+-- 7 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+SORT1 	rs646776 	LDL production (secondary) 	TT
+APOE (rs429358, rs7412) | Effect Allele: rs429358 = C, rs7412 = C
+APOE plays a central role in lipoprotein clearance and remnant handling. Your pattern is associated with a
+tendency toward less efficient clearance of LDL and remnant lipoprotein particles from the bloodstream,
+which contributes to a higher baseline ApoB level and increased cardiovascular risk — particularly in the
+context of saturated fat intake.
+LDLR (rs688) | Effect Allele: rs688 = T
+LDLR encodes the LDL receptor responsible for pulling LDL particles out of the bloodstream and into the liver
+for processing. Your pattern is associated with a tendency toward reduced receptor density or efficiency,
+meaning your liver clears LDL particles more slowly — contributing to elevated ApoB and LDL-C levels.
+APOB (rs693) | Effect Allele: rs693 = G
+APOB encodes the apolipoprotein B protein — the structural backbone of every LDL particle. Your pattern is
+associated with a tendency toward higher ApoB particle production from the liver, which directly increases the
+number of atherogenic particles in circulation regardless of their cholesterol content.
+CETP (rs708272) | Effect Allele: rs708272 = A
+CETP mediates the exchange of lipids between HDL and LDL particles. Your pattern is associated with a
+tendency toward increased CETP activity, which shifts cholesterol from protective HDL particles to
+atherogenic LDL particles — contributing to a less favorable lipid profile even when total cholesterol appears
+normal.
+PCSK9 (rs11591147) | Effect Allele: rs11591147 = G
+Your genetic pattern in PCSK9 is associated with a tendency toward higher circulating LDL levels. This gene
+regulates how many LDL receptors are available on the surface of liver cells to clear LDL from the
+bloodstream, and this variation can mean your liver is less efficient at removing LDL particles — contributing
+to a higher baseline ApoB level independent of diet.
+SORT1 (rs646776) | Effect Allele: rs646776 = T
+Your genetic pattern in SORT1 is associated with a tendency toward increased hepatic LDL secretion. This
+gene influences how the liver packages and releases lipoprotein particles into the bloodstream, and this
+variation can mean your system produces more LDL particles than average — which helps explain why ApoB
+may remain elevated even when dietary inputs are well-controlled.
+HMGCR (rs17238540) | Effect Allele: rs17238540 = T
+Your genetic pattern in HMGCR is associated with a tendency toward higher endogenous cholesterol
+production. This gene encodes the rate-limiting enzyme in cholesterol synthesis — the same enzyme
+targeted by statin medications — and this variation can mean your liver produces more cholesterol internally,
+which contributes to elevated LDL and ApoB levels beyond what dietary cholesterol intake alone would
+explain.
+CETP Transfer (rs5882) | Effect Allele: rs5882 = G
+CETP helps transfer cholesterol between different lipoproteins in the bloodstream, influencing how
+cholesterol is redistributed across particles. Your genetic pattern is associated with altered transfer activity,
+which can shift how cholesterol is packaged between HDL and apoB-containing particles. In your pattern, this
+Page 8
+
+-- 8 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+adds context to lipid handling — specifically how particles are structured and redistributed — but does not
+change the primary driver of risk, which is the total number of apoB-containing particles measured by ApoB.
+CLINICAL ACTION SUMMARY
+Your elevated ApoB level indicates a higher than optimal number of atherogenic particles in your
+bloodstream, which is a primary driver of cardiovascular risk. Your genetic profile provides important context,
+suggesting a tendency toward less efficient clearance and/or increased production of these particles, which
+can raise your baseline risk when diet and lifestyle are not dialed in. The following strategies are designed to
+directly address these underlying mechanisms.
+• Manage Saturated Fat Intake: Your genetic risk profile may make your system more sensitive to the
+LDL-raising effects of saturated fat. This type of fat can down-regulate the LDL receptors on your liver,
+reducing its ability to clear ApoB-containing particles. Prioritize healthy fats from whole-food sources like
+avocados, olive oil, nuts, and seeds, while being mindful of your intake from red meat, full-fat dairy, and
+coconut oil.
+• Increase Soluble Fiber: Soluble fiber is a powerful tool for lowering ApoB. It binds to bile acids in the gut,
+forcing your liver to pull more cholesterol from the bloodstream to produce new bile acids. This directly
+increases LDL receptor activity. Aim for at least 10 g/day of soluble fiber (and more if tolerated) from
+sources like oats, barley, psyllium husk, apples, and beans.
+• Consider Zone 2 Cardio: While all exercise is beneficial, steady-state cardiovascular exercise (often called
+Zone 2) is particularly effective at improving mitochondrial function and the efficiency with which your
+body uses fat for fuel. This can improve lipid metabolism and, alongside diet, contribute to lower levels of
+circulating atherogenic particles over time. Incorporating regular sessions of 45-60 minutes at a
+conversational pace is a sustainable way to support your cardiovascular health.
+• Consider Plant Sterols: Foods fortified with plant sterols and stanols can be an effective adjunct strategy.
+They work by blocking the absorption of cholesterol in the gut, which typically produces a modest
+(roughly 5-10%) reduction in LDL cholesterol and ApoB when used consistently with other dietary
+changes.
+These genetic patterns do not determine cardiovascular risk on their own. They help explain why ApoB may rise more
+easily or respond strongly to dietary inputs, particularly fat quality and fiber availability.
+Page 9
+
+-- 9 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+--
+--
+Page 10
+
+-- 10 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+LIFESTYLE, STRESS & RECOVERY
+This section was triggered because you indicated that recovery limitations are a frequent concern. Your
+genetic profile reveals specific tendencies in how your body manages stress, processes stimulants like
+caffeine, and regulates your internal clock — all of which directly impact your ability to recover.
+Why It Matters
+Your recovery capacity is not just about rest — it’s a function of how your nervous system, circadian rhythm,
+and stress-response pathways operate at the genetic level. Variants in genes like COMT, CYP1A2, PER3, and
+FKBP5 can influence everything from how quickly you clear stress hormones to how efficiently you metabolize
+caffeine and when your body naturally wants to sleep. Understanding these patterns allows us to build a
+recovery strategy that works with your biology, not against it.
+What Happens If We Don’t
+When your recovery systems are misaligned — whether from poor sleep timing, excessive stimulant use, or a
+stress response that doesn’t downregulate efficiently — the effects cascade across every other system in your
+body. Inflammation increases, insulin sensitivity decreases, and your body shifts from a state of repair to a
+state of survival. Over time, this creates a compounding deficit that undermines training, body composition, and
+cognitive performance.
+How We’re Addressing It
+Your protocol includes a targeted recovery strategy. This involves optimizing your sleep hygiene based on your
+circadian tendencies, managing caffeine intake according to your metabolic profile, and implementing targeted
+stress-reduction protocols that align with your neurological and cortisol-related genes. The goal is not to
+eliminate stress, but to build a robust recovery infrastructure that allows your body to adapt and thrive. This
+includes specific recommendations for sleep timing, light exposure, and daily decompression practices that are
+foundational to your success.
+Gene 	RS Number 	Pathway Role 	Your Result
+COMT 	rs4680 	Dopamine clearance speed 	GG
+OXTR 	rs53576 	Stress resilience 	GG
+OPRM1 	rs1799971 	Pain/reward signaling 	AA
+BDNF 	rs6265 	Neuroplasticity & recovery 	CC
+CYP1A2 	rs762551 	Caffeine metabolism speed 	AA
+AHR 	rs4410790 	Caffeine sensitivity / receptor 	CC
+CYP2A6 	rs1801272 	Caffeine / nicotine metabolism 	AA
+CLOCK 	rs1801260 	Circadian rhythm regulation 	AA
+CRY1 	rs2287161 	Delayed sleep phase 	CC
+ADA 	rs73598374 	Sleep pressure / adenosine 	CC
+MTNR1B 	rs10830963 	Melatonin receptor sensitivity 	CG
+FKBP5 	rs1360780 	Cortisol sensitivity / recovery 	--
+ADRB2 	rs1042713 	Adrenergic stress response 	GG
+PPARGC1A 	rs8192678 	Mitochondrial biogenesis 	TC
+Neurotransmitter & Stress Recovery
+These genes influence dopamine clearance, oxytocin signaling, opioid receptor sensitivity, and neuroplasticity —
+all of which shape how your nervous system responds to and recovers from stress.
+Page 11
+
+-- 11 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+Caffeine Metabolism
+These genes determine how quickly you metabolize caffeine and how sensitive your receptors are to its effects.
+This influences optimal timing, dose, and whether caffeine supports or disrupts your performance and sleep.
+CYP1A2 (rs762551) | Effect Allele: rs762551 = A
+Your genetic pattern in CYP1A2 is associated with slower caffeine metabolism. This gene encodes the liver
+enzyme responsible for breaking down roughly 95% of ingested caffeine, and this variation means caffeine
+stays active in your system significantly longer — amplifying both its performance benefits and its potential to
+disrupt sleep, elevate cortisol, and increase heart rate if consumed too late in the day.
+CYP2A6 (rs1801272) | Effect Allele: rs1801272 = A
+Your genetic pattern in CYP2A6 is associated with a tendency toward altered secondary caffeine metabolism.
+While CYP1A2 handles the primary breakdown, CYP2A6 processes several caffeine metabolites, and this
+variation can mean those downstream products linger longer — contributing to prolonged stimulant effects
+and a wider window of sleep disruption.
+Circadian Rhythm & Sleep
+These genes influence your internal clock, sleep pressure, and melatonin signaling. Variants here can explain why
+some people are natural night owls, struggle with sleep onset, or are more sensitive to light disruption.
+CLOCK (rs1801260) | Effect Allele: rs1801260 = A
+Your genetic pattern in CLOCK is associated with a tendency toward a delayed circadian phase and potential
+difficulty with sleep onset. This gene is the master regulator of your circadian rhythm, and this variation can
+mean your internal clock runs slightly longer than 24 hours — contributing to a natural drift toward later
+bedtimes and morning grogginess.
+MTNR1B (rs10830963) | Effect Allele: rs10830963 = G
+Your genetic pattern in the melatonin receptor gene MTNR1B is associated with a stronger-than-average
+impact of melatonin on your circadian rhythm. While this can be beneficial for sleep, it also means melatonin
+has a more pronounced suppressive effect on insulin secretion — linking your sleep-wake cycle directly to
+glucose regulation.
+Stress & Cortisol Response
+These genes influence how your HPA axis responds to stress, how quickly cortisol clears, and how your
+adrenergic and serotonin systems modulate the stress response. Variants here can explain prolonged recovery
+from high-stress periods.
+NR3C1 (rs6190) | Effect Allele: rs6190 = C
+Your genetic pattern in NR3C1 is associated with a tendency toward altered glucocorticoid receptor
+sensitivity. This gene encodes the receptor that cortisol binds to in nearly every tissue in your body, and this
+variation can mean your cells are less responsive to cortisol's regulatory signals — potentially requiring
+higher cortisol levels to achieve the same stress-dampening effect.
+ADRB2 (rs1042713) | Effect Allele: rs1042713 = G
+Your genetic pattern in the beta-2 adrenergic receptor is associated with a tendency toward higher adrenaline
+and noradrenaline signaling. These are your "fight or flight" hormones, and this variation can mean your
+system mounts a stronger sympathetic response to stress — useful for acute performance but problematic
+when chronically activated.
+Page 12
+
+-- 12 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+Mitochondrial & Cellular Energy
+These genes influence mitochondrial biogenesis and cellular energy regulation. Variants here affect how efficiently
+your cells produce energy and adapt to metabolic demands.
+PPARGC1A (rs8192678) | Effect Allele: rs8192678 = T
+Your genetic pattern here is associated with a tendency toward a slower cellular rebuilding process following
+physical or mental stress — meaning your system may need more time between high-demand periods to fully
+restore.
+CLINICAL ACTION SUMMARY
+This section is triggered because you indicated that recovery limitations are a frequent concern, and your
+genetic profile provides context for why that might be. Your genes suggest tendencies related to your internal
+stress response system (the HPA axis), your natural sleep-wake cycle (circadian rhythm), and the metabolism
+of key neurotransmitters and compounds like caffeine. The following strategies are designed to help you build
+a more robust recovery system.
+Lean Into Your Chronotype: Your genetic profile suggests tendencies that may lean you toward being
+more of a night owl or morning lark. Instead of fighting this, try to structure your day to align with
+your natural energy patterns. If you tend to be a night owl, consider scheduling your most
+demanding tasks for later in the day. Regardless of your chronotype, consistent light exposure in
+the morning is a powerful tool to anchor your daily rhythm.
+Implement a Proactive Stress Off-Ramp: Your genetic profile suggests your system may be slower to
+turn off the cortisol response after a stressor. Implementing a daily 10-20 minute off-ramp practice
+such as non-sleep deep rest (NSDR), breathwork, or meditation are highly effective tools for
+signaling safety to your body and helping your HPA axis down-regulate.
+Respect Your Caffeine Metabolism: Your genetic profile suggests a tendency toward slower caffeine
+metabolism. This means caffeine may stay in your system significantly longer. Consider testing a
+strict caffeine cutoff time (e.g., 12 PM or earlier) and paying close attention to how it affects your
+sleep quality and feelings of anxiety or restlessness.
+Manage Your Dopamine Environment: If your genetic profile includes a certain COMT variation, it
+suggests your brain may be slower to clear dopamine. This can support focus but may also
+increase susceptibility to overstimulation or anxiety. Be mindful of stacking stimulants and
+consider scheduling regular breaks from demanding cognitive work to allow your
+neurotransmitter systems to reset.
+Page 13
+
+-- 13 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+Carb Controller
+Stabilize Blood Sugar, Restore Metabolic Flexibility
+Your nutrition archetype is: Carb Controller. This approach improves insulin sensitivity so calories are directed
+toward muscle instead of fat. When insulin signaling is impaired, hunger rises, energy crashes, and muscle is
+harder to retain — even in a calorie deficit. By controlling carbohydrate dose, timing, and quality, this plan
+restores metabolic efficiency and makes progress more sustainable.
+This Diet Revolves Around
+Structured carbohydrate intake, higher protein emphasis, controlled portions, and strategic carb timing
+around training. Carbs are not eliminated — they’re used intentionally.
+Why This Fits Your Body
+This archetype matches your insulin and glucose pattern — and, where present, genes like TCF7L2, PPARG,
+and SLC2A2. The biomarker section explains why those matter; this plan is how you make them work in your
+favor.
+Cardiovascular Optimization Note
+Because your ApoB is elevated, we're also emphasizing fat quality across this plan — limiting saturated fats
+(fatty cuts of meat, butter, cheese, coconut oil) and prioritizing monounsaturated and omega-3 sources (olive
+oil, avocado, nuts, fatty fish). This layers on top of your nutrition archetype, not instead of it.
+Page 14
+
+-- 14 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+YOUR SUPPLEMENT PROTOCOL
+Supplement 	Daily Dose 	When To Take 	Primary Purpose
+Omega-3s (EPA/DHA) 	2-3g combined EPA/DHA daily 	With meals, can split
+AM/PM
+Anti-inflammatory,
+cardiovascular, recovery
+Berberine 	500mg 2-3x daily with meals 	With meals, titrate up from
+500mg 1x daily
+Insulin sensitivity,
+metabolic support
+Methylated B-Complex 	1 capsule daily (methylfolate +
+methylcobalamin)
+Morning with food 	Methylation support,
+homocysteine clearance
+Soluble Fiber 	7-10g/day (6-8g if gut-sensitive) Split across meals, titrate
+from 3-4g/day
+ApoB reduction, gut
+health, blood sugar
+Iron 	Per provider recommendation 	On empty stomach or with
+vitamin C
+Iron repletion
+Omega-3s (EPA/DHA)
+Dose: 2-3g combined EPA/DHA daily
+Timing: With meals, can split AM/PM
+Why It's Included
+Omega-3 fatty acids are foundational for managing inflammation, supporting cardiovascular health, and
+optimizing cell membrane function. EPA and DHA modulate inflammatory signaling at the cellular level,
+improve lipid profiles, and support recovery from training stress.
+Practical Notes
+Look for supplements with at least 1g EPA + 1g DHA combined per serving. Triglyceride form is better absorbed than
+ethyl ester form. Can cause fishy burps — taking with meals and freezing capsules helps. If vegetarian/vegan,
+algae-based EPA/DHA is an equivalent alternative.
+Berberine
+Dose: 500mg 2-3x daily with meals
+Timing: With meals, titrate up from 500mg 1x daily
+Why It's Included
+Page 15
+
+-- 15 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+Berberine is a plant compound that activates AMPK — the same metabolic switch triggered by exercise and
+caloric restriction. It has been shown in research to meaningfully improve insulin sensitivity. For individuals
+with elevated fasting insulin or glucose, berberine addresses the root dysfunction.
+Practical Notes
+Start low and titrate — GI upset is common if starting at full dose. May lower blood sugar — if on diabetes medications,
+coordinate with physician. Can take 2-4 weeks to see full effect on fasting insulin.
+Methylated B-Complex
+Dose: 1 capsule daily (methylfolate + methylcobalamin)
+Timing: Morning with food
+Why It's Included
+Methylated B-vitamins support the methylation cycle — a foundational process for DNA repair,
+neurotransmitter production, homocysteine clearance, and cellular energy. Methylated forms are
+"pre-activated" and bypass genetic limitations that can make standard B-vitamins less effective.
+Practical Notes
+Look for products listing "methylfolate" (or 5-MTHF) and "methylcobalamin" — not "folic acid" or "cyanocobalamin".
+Folate-rich foods (leafy greens, legumes) complement supplementation. Worth rechecking homocysteine at 12 weeks.
+Soluble Fiber
+Dose: 7-10g/day (6-8g if gut-sensitive)
+Timing: Split across meals, titrate from 3-4g/day
+Why It's Included
+Soluble fiber binds bile acids in the gut, which forces the liver to pull cholesterol from the bloodstream to
+make more bile. This mechanism directly supports LDL particle clearance and ApoB reduction. It also
+supports gut health, blood sugar stability, and satiety.
+Practical Notes
+Titrate slowly — jumping to full dose causes bloating and gas. Take with plenty of water. Common sources: psyllium husk,
+PHGG, oat beta-glucan, apple pectin. Best split across meals rather than taken all at once.
+Page 16
+
+-- 16 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+PEPTIDE CONSIDERATIONS
+Important
+The peptides listed below are sometimes discussed with medical providers as adjuncts to nutrition, training, and lifestyle
+optimization. This section is informational only — peptides require provider evaluation, prescription, and monitoring.
+Nothing here constitutes a recommendation or prescription. Discuss options with a qualified provider if interested.
+Metabolic Support Triggered by elevated insulin/glucose or aggressive fat-loss goal
+Semaglutide
+A GLP-1 agonist commonly discussed for appetite regulation and glucose signaling. Sometimes considered to support
+adherence to calorie targets and metabolic markers when fat-loss goals are aggressive.
+Tirzepatide
+A dual-agonist compound (GLP-1 and GIP) discussed for supporting appetite regulation and metabolic signaling.
+Sometimes considered when providers want a broader metabolic approach.
+Retatrutide (Advanced)
+A triple-agonist compound (GLP-1, GIP, and glucagon) representing a newer approach to metabolic support. Typically
+only discussed in provider-led contexts.
+MOTS-C
+A mitochondrial-derived peptide discussed in research contexts for its potential role in cellular energy metabolism and
+metabolic flexibility.
+RECOVERY & NEUROLOGICAL SUPPORT Triggered by circadian, stress, or neurological genetic variants
+DSIP (Delta Sleep-Inducing Peptide)
+A neuropeptide that promotes deep, restorative sleep architecture by modulating delta wave activity. Supports natural
+sleep onset, enhances sleep quality, and improves overnight recovery. Particularly relevant for individuals with genetic
+variants affecting circadian rhythm or stress-related sleep disruption.
+Semax / Selank
+Semax is a synthetic ACTH analog that supports cognitive function, focus, and neuroprotection by enhancing BDNF
+expression. Selank is a tuftsin analog with anxiolytic properties that modulates GABA and serotonin pathways. Together,
+this combination supports stress resilience, mental clarity, and neurological recovery — especially relevant for individuals
+with COMT, BDNF, or serotonin transporter variants.
+Page 17
+
+-- 17 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+Page 18
+
+-- 18 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+BLOOD WORK REFERENCE
+This table summarizes the 8 biomarkers analyzed in your blueprint. Each marker is assigned a role based on your current
+results: Primary Focus (the main target this block), Secondary Focus (monitoring for improvement), Supporting (layered
+intervention), or Monitored (within range, tracked for context).
+Biomarker 	Your Result 	Optimal Range 	12-Week Target 	Status
+hs-CRP 	Current: <0.20
+mg/L
+< 1.0 mg/L 	< 1.0 mg/L
+(optimal)
+Monitored
+Fasting Insulin 	Current: 8.92
+μIU/mL
+2–5 μIU/mL (optimal) 2–5 μIU/mL
+(optimal)
+Primary Focus
+Fasting Glucose 	79 mg/dL 	70-90 mg/dL 	70-90 mg/dL 	Monitored
+HbA1c 	5.3 % 	< 5.4% 	< 5.4% 	Monitored
+Homocysteine 	6.24 μmol/L 	< 9 μmol/L 	< 9 μmol/L 	Monitored
+Ferritin 	21.7 ng/mL 	50-150 ng/mL 	50-150 ng/mL 	Secondary Focus
+ApoB 	Current: 81 mg/dL < 60 mg/dL (optimal) < 60 mg/dL
+(optimal)
+Elevated
+Vitamin D 	Current: 65.19
+ng/mL
+50–70 ng/mL
+(optimal)
+50–70 ng/mL
+(optimal)
+Within optimal range
+Status Definitions
+Primary Focus — The main biomarker driving your 12-week plan. Full intervention applied.
+Secondary Focus — Elevated but not the primary target. Monitored with supporting interventions.
+Supporting — Addressed with targeted additions layered onto your base plan.
+Monitored — Currently not a primary or secondary target. Tracked for context and rechecked at 12 weeks.
+Page 19
+
+-- 19 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+GENETIC APPENDIX
+This appendix lists the 66 SNPs analyzed as part of your Impact Health Systems Blueprint. These are your raw genotype
+results across 10 biological categories. Where a variant is present, its context and relevance are explained in the system
+sections of this report. Genes without notable variants are still listed here for completeness — they confirm what's working
+as expected.
+Lipid Handling
+Gene 	RS Number 	What It Affects 	Your Result
+APOE 	rs429358 + rs7412 	Particle clearance, sat fat response 	CT
+APOB 	rs693 	ApoB production 	AG
+LDLR 	rs688 	LDL receptor function 	TC
+CETP 	rs708272 	HDL/LDL transfer 	AG
+LPA 	rs3798220, rs10455872 	Lp(a) levels 	TT
+APOE 	rs7412 	APOE ε2 allele (protective) 	CC
+LPA 	rs10455872 	Lp(a) levels (secondary) 	AA
+PPARA 	rs4253778 	Fatty acid oxidation 	GG
+— 	rs4714209 	LD proxy 	TC
+CETP 	rs5882 	Cholesterol transfer 	AG
+Inflammation
+Gene 	RS Number 	What It Affects 	Your Result
+CRP 	rs1205, rs1800947 	Baseline CRP production 	CC
+IL-6 	rs1800795 	Pro-inflammatory signaling 	GG
+TNF-α 	rs1800629 	Inflammatory response intensity 	GG
+NFKB1 	rs28362491 	Master inflammatory switch 	II
+IL-10 	rs1800896 	Anti-inflammatory capacity 	TT
+CRP 	rs1800947 	Baseline CRP production (secondary) 	--
+IL-1β promoter 	rs1143627 	Inflammatory cytokine 	AG
+IL-6R 	rs8192284 	IL-6 receptor signaling 	--
+Methylation
+Page 20
+
+-- 20 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+Gene 	RS Number 	What It Affects 	Your Result
+MTHFR 	rs1801133 (C677T) 	Folate processing (major) 	GG
+MTHFR 	rs1801131 (A1298C) 	Folate processing (minor) 	TG
+MTR 	rs1805087 	B12-dependent remethylation 	AA
+MTRR 	rs1801394 	B12 recycling 	GG
+CBS 	rs234706 	Transsulfuration pathway 	AG
+BHMT 	rs3733890 	Alternate remethylation 	GG
+TCN2 	rs1801198 	B12 transport 	CC
+FUT2 	rs602662 	B12 absorption, gut signaling 	AG
+Insulin/Glucose
+Gene 	RS Number 	What It Affects 	Your Result
+TCF7L2 	rs7903146 	Insulin production (strongest predictor) 	CC
+SLC2A2 	rs5400 	Glucose transport 	AG
+PPARG 	rs1801282 	Fat cell insulin sensitivity 	CG
+SLC30A8 	rs13266634 	Zinc transport in beta cells 	CC
+IRS2 	rs4771647 	Insulin signaling 	AC
+GCK 	rs1799884 	Glucose sensing / fasting glucose 	TC
+Vitamin D
+Gene 	RS Number 	What It Affects 	Your Result
+CYP2R1 	rs10741657 	Vitamin D activation 	GG
+DHCR7 	rs12785878 	Vitamin D synthesis 	TT
+GC 	rs2282679, rs4588, rs7041 Vitamin D binding/transport 	TT
+VDR 	rs2228570, rs1544410,
+rs731236
+Vitamin D receptor sensitivity 	--
+GC 	rs4588 	Vitamin D transport (secondary) 	GG
+GC 	rs7041 	Vitamin D transport (tertiary) 	CC
+Iron Metabolism
+Gene 	RS Number 	What It Affects 	Your Result
+HFE 	rs1800562 (C282Y) 	Iron absorption (major) 	GG
+Page 21
+
+-- 21 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+HFE 	rs1799945 (H63D) 	Iron absorption (minor) 	CC
+TF 	rs3811647 	Transferrin function 	AG
+Omega-3 Metabolism
+Gene 	RS Number 	What It Affects 	Your Result
+FADS1 	rs174546 	ALA to EPA conversion 	TC
+FADS2 	rs174618 	EPA to DHA conversion 	CC
+FADS2 	rs1535 	EPA to DHA conversion (secondary) 	AG
+Gut/Digestion
+Gene 	RS Number 	What It Affects 	Your Result
+LCT 	rs4988235 	Lactase persistence 	GG
+HLA-DQA1 	rs2187668 	Celiac susceptibility 	CC
+HLA-DQB1 	rs7454108 	Celiac susceptibility 	TT
+NOD2 	rs2066844 	Innate gut immunity 	CC
+AOC1 / DAO 	rs10156191 	Histamine breakdown 	CC
+Appetite/Metabolism
+Gene 	RS Number 	What It Affects 	Your Result
+LEP 	rs7799039 	Leptin production 	AG
+LEPR 	rs1137101 	Leptin receptor 	AG
+MC4R 	rs17782313 	Appetite regulation 	TT
+GHRL 	rs696217 	Ghrelin (hunger hormone) 	--
+MC4R 	rs6567160 	Satiety regulation 	TT
+Connective Tissue
+Gene 	RS Number 	What It Affects 	Your Result
+COL1A1 	rs1800012 	Collagen type I 	AC
+COL5A1 	rs12722 	Collagen type V 	TC
+GDF5 	rs143383 	Joint/cartilage development 	GG
+MMP3 	rs679620 	Tissue remodeling 	TT
+Page 22
+
+-- 22 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+ACTN3 	rs1815739 	Muscle fiber type 	CC
+Stress & Recovery
+Gene 	RS Number 	What It Affects 	Your Result
+COMT 	rs4680 	Dopamine metabolism 	GG
+OXTR 	rs53576 	Stress resilience 	GG
+OPRM1 	rs1799971 	Reward sensitivity 	AA
+BDNF 	rs6265 	Neuroplasticity, mood 	CC
+GNB3 	rs5443 	Sympathetic signaling 	CC
+DRD2 / ANKK1 	rs1800497 	Dopamine reward 	GG
+Oxidative Stress
+Gene 	RS Number 	What It Affects 	Your Result
+SOD2 	rs4880 	Mitochondrial antioxidant 	GG
+NQO1 	rs1800566 	Detoxification enzyme 	AG
+CAT 	rs1001179 	Catalase function 	TC
+HMOX1 	rs2269533 	Heme oxygenase 	--
+NRF2 	rs6721961 	Antioxidant response 	--
+GPX1 	rs1050450 	Glutathione peroxidase 	AG
+CAFFEINE METABOLISM
+Gene 	RS Number 	What It Affects 	Your Result
+CYP1A2 	rs762551 	Caffeine metabolism speed 	AA
+AHR 	rs4410790 	Caffeine sensitivity / receptor 	CC
+CYP2A6 	rs1801272 	Caffeine / nicotine metabolism 	AA
+CIRCADIAN RHYTHM & SLEEP
+Gene 	RS Number 	What It Affects 	Your Result
+CLOCK 	rs1801260 	Circadian rhythm regulation 	AA
+CRY1 	rs2287161 	Delayed sleep phase tendency 	CC
+ADA 	rs73598374 	Adenosine / sleep pressure 	CC
+MTNR1B 	rs10830963 	Melatonin receptor / light sensitivity 	CG
+STRESS & CORTISOL
+Page 23
+
+-- 23 of 24 --
+
+IMPACT HEALTH SYSTEMS BLUEPRINT
+Gene 	RS Number 	What It Affects 	Your Result
+FKBP5 	rs1360780 	Cortisol sensitivity / recovery 	--
+NR3C1 	rs6190 	Glucocorticoid receptor function 	CC
+ADRB2 	rs1042713 	Adrenergic stress response 	GG
+MITOCHONDRIAL FUNCTION
+Gene 	RS Number 	What It Affects 	Your Result
+SIRT1 	rs10997868 	Metabolic regulation / longevity 	--
+PPARGC1A 	rs8192678 	Mitochondrial biogenesis 	TC
+UCP2 	rs659366 	Mitochondrial uncoupling 	CC
+Other
+Gene 	RS Number 	What It Affects 	Your Result
+— 	rs4263839 	— 	GG
+— 	rs9290264 	— 	CC
+YOUR PLAN IS SET
+IMPACT HEALTH SYSTEMS BLUEPRINT
+Generated 2026-05-12
+Page 24
+
+-- 24 of 24 --
+
