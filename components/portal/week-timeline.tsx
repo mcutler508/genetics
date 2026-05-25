@@ -1,7 +1,7 @@
 "use client";
 
-import { CheckCircle2, Circle, Flag } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { CheckCircle2, Flag } from "lucide-react";
+import { VellumCard } from "@/components/ds/card";
 import { cn } from "@/lib/utils";
 import { WEEKS, type WeekTemplate } from "@/lib/tracker-data";
 import { useTracker } from "@/lib/use-tracker";
@@ -16,8 +16,8 @@ export function WeekTimeline({ currentWeek, onSelect, activeWeek }: Props) {
   const { state, hydrated } = useTracker();
 
   return (
-    <Card>
-      <CardContent className="space-y-1 py-4">
+    <VellumCard padded={false}>
+      <div className="space-y-0.5 py-3 px-3">
         {WEEKS.map((w) => {
           const taskState = state.weekTasks[w.number] ?? {};
           const completed = w.tasks.filter((t) => taskState[t.id]).length;
@@ -36,39 +36,50 @@ export function WeekTimeline({ currentWeek, onSelect, activeWeek }: Props) {
               type="button"
               onClick={() => onSelect(w.number)}
               className={cn(
-                "group flex w-full items-start gap-4 rounded-lg border px-3 py-3 text-left transition-all",
+                "group relative flex w-full items-start gap-4 rounded-lg border px-3 py-3 text-left transition-all",
                 isActive
-                  ? "border-primary/40 bg-primary/5"
-                  : "border-transparent hover:border-border hover:bg-muted/40"
+                  ? "border-[color:color-mix(in_oklch,var(--ds-accent)_40%,transparent)] bg-[color:color-mix(in_oklch,var(--ds-accent)_5%,transparent)]"
+                  : "border-transparent hover:border-rule hover:bg-canvas-deep/40"
               )}
             >
+              {isActive && (
+                <span
+                  className="absolute left-0 top-2 bottom-2 w-[2px] rounded-full"
+                  style={{ backgroundColor: "var(--ds-accent)" }}
+                  aria-hidden
+                />
+              )}
               <WeekIcon week={w} status={status} pct={hydrated ? pct : 0} />
               <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+                  <span className="kicker text-ink-faint">
                     Week {w.number}
-                  </p>
+                  </span>
                   {status === "current" && (
-                    <span className="inline-flex items-center rounded-full bg-primary px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wider text-primary-foreground">
+                    <span
+                      className="inline-flex items-center rounded-sm px-1.5 py-0.5 kicker"
+                      style={{
+                        backgroundColor: "var(--ds-accent)",
+                        color: "var(--ds-vellum)",
+                      }}
+                    >
                       Current
                     </span>
                   )}
-                  {w.milestone && (
-                    <Flag className="h-3 w-3 text-chart-5" />
-                  )}
+                  {w.milestone && <Flag className="h-3 w-3 text-mark-clay" />}
                 </div>
-                <p className="editorial-title mt-0.5 text-base leading-tight text-foreground">
+                <p className="ds-title-2 mt-1 text-base leading-tight text-ink">
                   {w.theme}
                 </p>
-                <p className="text-xs text-muted-foreground">{w.focus}</p>
+                <p className="kicker mt-1 text-ink-faint">{w.focus}</p>
                 {hydrated && pct > 0 && (
-                  <div className="mt-2 h-1 w-full overflow-hidden rounded-full bg-muted">
+                  <div className="mt-2 h-1 w-full overflow-hidden rounded-full bg-vellum-shaded">
                     <div
                       className={cn(
                         "h-full rounded-full transition-all",
                         status === "done"
-                          ? "bg-chart-2"
-                          : "bg-primary"
+                          ? "bg-mark-forest"
+                          : "bg-[var(--ds-accent)]"
                       )}
                       style={{ width: `${pct}%` }}
                     />
@@ -78,8 +89,8 @@ export function WeekTimeline({ currentWeek, onSelect, activeWeek }: Props) {
             </button>
           );
         })}
-      </CardContent>
-    </Card>
+      </div>
+    </VellumCard>
   );
 }
 
@@ -96,12 +107,12 @@ function WeekIcon({
   return (
     <span
       className={cn(
-        "mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-xs font-mono",
+        "mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border ds-data",
         done
-          ? "border-chart-2 bg-chart-2 text-background"
+          ? "border-[var(--ds-mark-forest)] bg-[var(--ds-mark-forest)] text-[var(--ds-vellum)]"
           : status === "current"
-            ? "border-primary bg-primary text-primary-foreground"
-            : "border-border bg-background text-muted-foreground"
+            ? "border-[var(--ds-accent)] bg-[var(--ds-accent)] text-[var(--ds-vellum)]"
+            : "border-rule bg-vellum text-ink-faint"
       )}
     >
       {done ? <CheckCircle2 className="h-4 w-4" /> : week.number}

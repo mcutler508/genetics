@@ -1,8 +1,10 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageHeader } from "@/components/portal/page-header";
-import { RoleBadge } from "@/components/portal/status-badge";
 import { Disclaimer } from "@/components/portal/disclaimer";
+import { VellumCard, InsetCard } from "@/components/ds/card";
+import { Kicker } from "@/components/ds/kicker";
+import { StatusPill } from "@/components/ds/status-pill";
 import { systemFocus } from "@/lib/mock-data";
+import { roleToTier } from "@/lib/biomarker-range";
 
 export default function SystemsPage() {
   return (
@@ -10,33 +12,34 @@ export default function SystemsPage() {
       <PageHeader
         eyebrow="Your Blueprint"
         title="Biological systems"
-        description="A systems-level view of your blueprint — primary, secondary, supporting, and monitored. Each entry connects genetics, biomarkers, and the 12-week plan."
+        description="A systems-level view of your blueprint — primary, secondary, supporting, and monitored. Each entry connects genetics, biomarkers, and the twelve-week plan."
       />
 
-      <div className="space-y-5">
+      <div className="space-y-6">
         {systemFocus.map((sys) => (
-          <Card key={sys.id}>
-            <CardHeader className="flex flex-row items-start justify-between gap-4 pb-4">
-              <div className="space-y-3">
-                <RoleBadge role={sys.role} />
-                <CardTitle className="editorial-title text-2xl md:text-3xl">
-                  {sys.systemName}
-                </CardTitle>
-                <p className="text-sm text-muted-foreground">{sys.summary}</p>
-              </div>
-              <div className="shrink-0 text-right">
-                <p className="editorial-eyebrow text-muted-foreground">
-                  {sys.biomarkerName}
+          <VellumCard key={sys.id}>
+            {/* Header row */}
+            <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+              <div className="flex-1 space-y-3">
+                <StatusPill tier={roleToTier(sys.role)} />
+                <h2 className="ds-title-1 text-ink">{sys.systemName}</h2>
+                <p className="text-sm text-ink-muted max-w-2xl">
+                  {sys.summary}
                 </p>
-                <p className="editorial-title mt-1 text-2xl text-foreground">
+              </div>
+              <InsetCard className="shrink-0 md:text-right md:min-w-[180px]">
+                <Kicker className="text-ink-faint">{sys.biomarkerName}</Kicker>
+                <p className="ds-numeric-L mt-1.5 text-ink">
                   {sys.currentValue}
                 </p>
-                <p className="text-xs text-muted-foreground">
-                  Target: {sys.targetValue}
+                <p className="kicker mt-1 text-ink-faint">
+                  → Target {sys.targetValue}
                 </p>
-              </div>
-            </CardHeader>
-            <CardContent className="grid gap-5 md:grid-cols-3">
+              </InsetCard>
+            </div>
+
+            {/* Three editorial sections */}
+            <div className="mt-7 grid gap-6 border-t border-rule pt-6 md:grid-cols-3">
               <Section title="Why it matters" body={sys.whyItMatters} />
               <Section
                 title="What happens if ignored"
@@ -46,30 +49,30 @@ export default function SystemsPage() {
                 title="How we're addressing it"
                 body={sys.howAddressingIt}
               />
-              <div className="md:col-span-3">
-                <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                  Related genes
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {sys.relatedGenes.map((g) => (
-                    <span
-                      key={g}
-                      className="rounded-md border border-border bg-muted/40 px-2 py-0.5 text-xs font-mono text-foreground"
-                    >
-                      {g}
-                    </span>
-                  ))}
-                </div>
+            </div>
+
+            {/* Related genes */}
+            <div className="mt-6 border-t border-rule pt-6">
+              <Kicker className="mb-3 text-ink-faint">Related genes</Kicker>
+              <div className="flex flex-wrap gap-1.5">
+                {sys.relatedGenes.map((g) => (
+                  <span
+                    key={g}
+                    className="ds-data rounded-md border border-rule bg-canvas-deep px-2 py-0.5 text-ink"
+                  >
+                    {g}
+                  </span>
+                ))}
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </VellumCard>
         ))}
       </div>
 
       <Disclaimer>
-        Genetic context is provided as one input among many. Variants describe
-        tendencies, not certainties. Always interpret alongside labs, history,
-        and a qualified provider.
+        Genetic context is one input among many · Variants describe tendencies,
+        not certainties · Interpret alongside labs, history, and a qualified
+        provider
       </Disclaimer>
     </>
   );
@@ -78,8 +81,8 @@ export default function SystemsPage() {
 function Section({ title, body }: { title: string; body: string }) {
   return (
     <div>
-      <p className="editorial-eyebrow mb-2 text-muted-foreground">{title}</p>
-      <p className="text-sm leading-relaxed text-foreground">{body}</p>
+      <Kicker className="mb-2 text-ink-faint">{title}</Kicker>
+      <p className="text-sm leading-relaxed text-ink">{body}</p>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import { PageHeader } from "@/components/portal/page-header";
-import { PlaceholderCard } from "@/components/portal/placeholder-card";
+import { Disclaimer } from "@/components/portal/disclaimer";
+import { EmptyState } from "@/components/ds/empty-state";
+import { VellumCard } from "@/components/ds/card";
 
 export default function UploadPage() {
   return (
@@ -7,9 +9,21 @@ export default function UploadPage() {
       <PageHeader
         eyebrow="Onboarding"
         title="Upload your blueprint report"
-        description="Upload your Impact Health Systems Blueprint PDF. We'll walk through processing states and surface the structured plan once ready."
+        description="Upload your Impact Health Systems Blueprint PDF. The portal walks through processing states and surfaces the structured plan once ready."
       />
-      <PlaceholderCard note="Drag-and-drop uploader, simulated processing states, and parsed-section preview will live here." />
+
+      <VellumCard padded={false}>
+        <EmptyState
+          title="Drop your PDF here."
+          body="Drag-and-drop or browse to upload. Once processed, your biomarkers, supplements, genetic appendix, and twelve-week plan populate the rest of the portal."
+          ctaLabel="Choose a file"
+        />
+      </VellumCard>
+
+      <Disclaimer>
+        Upload flow is part of the MVP scaffolding · PDF parsing is mocked for
+        the demo
+      </Disclaimer>
     </>
   );
 }

@@ -1,13 +1,13 @@
 "use client";
 
 import { Check } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { VellumCard } from "@/components/ds/card";
+import { Kicker } from "@/components/ds/kicker";
 import { cn } from "@/lib/utils";
-import { HABITS, type HabitId, isoDate } from "@/lib/tracker-data";
+import { HABITS, isoDate } from "@/lib/tracker-data";
 import { useTracker } from "@/lib/use-tracker";
 
 type Props = {
-  /** ISO date to check in for. Defaults to today. */
   date?: string;
 };
 
@@ -19,47 +19,43 @@ export function DailyCheckin({ date }: Props) {
   const isToday = dateISO === isoDate();
 
   return (
-    <Card className="overflow-hidden">
-      <CardContent className="py-6">
-        <div className="mb-5 flex items-baseline justify-between">
-          <div>
-            <p className="editorial-eyebrow text-muted-foreground">
-              {isToday ? "Today's check-in" : "Check-in"}
-            </p>
-            <p className="editorial-title mt-1 text-2xl text-foreground">
-              {formatDate(dateISO)}
-            </p>
-          </div>
-          <div className="text-right">
-            <p className="editorial-title text-3xl text-foreground">
-              {hydrated ? pct : 0}
-              <span className="text-base text-muted-foreground">%</span>
-            </p>
-            <p className="text-xs text-muted-foreground">
-              {hydrated
-                ? `${HABITS.filter((h) => entry[h.id]).length} of ${HABITS.length} habits`
-                : "—"}
-            </p>
-          </div>
+    <VellumCard>
+      <div className="mb-6 flex items-baseline justify-between">
+        <div>
+          <Kicker tone="accent">
+            {isToday ? "Today's check-in" : "Check-in"}
+          </Kicker>
+          <p className="ds-title-2 mt-2 text-ink">{formatDate(dateISO)}</p>
         </div>
+        <div className="text-right">
+          <p className="ds-numeric-L text-ink">
+            {hydrated ? pct : 0}
+            <span className="ds-data text-ink-muted ml-1">%</span>
+          </p>
+          <p className="kicker mt-1 text-ink-faint">
+            {hydrated
+              ? `${HABITS.filter((h) => entry[h.id]).length} of ${HABITS.length}`
+              : "—"}
+          </p>
+        </div>
+      </div>
 
-        <div className="grid gap-2 md:grid-cols-2">
-          {HABITS.map((h) => {
-            const on = !!entry[h.id];
-            return (
-              <HabitToggle
-                key={h.id}
-                label={h.label}
-                detail={h.detail}
-                on={on}
-                onToggle={() => toggleHabit(dateISO, h.id)}
-                disabled={!hydrated}
-              />
-            );
-          })}
-        </div>
-      </CardContent>
-    </Card>
+      <div className="grid gap-2 md:grid-cols-2">
+        {HABITS.map((h) => {
+          const on = !!entry[h.id];
+          return (
+            <HabitToggle
+              key={h.id}
+              label={h.label}
+              detail={h.detail}
+              on={on}
+              onToggle={() => toggleHabit(dateISO, h.id)}
+              disabled={!hydrated}
+            />
+          );
+        })}
+      </div>
+    </VellumCard>
   );
 }
 
@@ -85,32 +81,23 @@ function HabitToggle({
         "group flex w-full items-start gap-3 rounded-xl border p-3 text-left transition-all",
         "disabled:cursor-not-allowed disabled:opacity-50",
         on
-          ? "border-primary/30 bg-primary/5"
-          : "border-border bg-background hover:border-primary/30 hover:bg-muted/40"
+          ? "border-[color:color-mix(in_oklch,var(--ds-accent)_30%,transparent)] bg-[color:color-mix(in_oklch,var(--ds-accent)_5%,transparent)]"
+          : "border-rule bg-vellum hover:border-[color:color-mix(in_oklch,var(--ds-accent)_30%,transparent)] hover:bg-canvas-deep/40"
       )}
     >
       <span
         className={cn(
           "mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-colors",
           on
-            ? "border-primary bg-primary text-primary-foreground"
-            : "border-border bg-background group-hover:border-primary/60"
+            ? "border-[var(--ds-accent)] bg-[var(--ds-accent)] text-[var(--ds-vellum)]"
+            : "border-rule bg-vellum group-hover:border-[color:color-mix(in_oklch,var(--ds-accent)_60%,transparent)]"
         )}
       >
         {on && <Check className="h-3 w-3" strokeWidth={3} />}
       </span>
       <span className="flex-1">
-        <span
-          className={cn(
-            "block text-sm font-medium",
-            on ? "text-foreground" : "text-foreground"
-          )}
-        >
-          {label}
-        </span>
-        <span className="mt-0.5 block text-xs text-muted-foreground">
-          {detail}
-        </span>
+        <span className="block text-sm font-medium text-ink">{label}</span>
+        <span className="mt-0.5 block text-xs text-ink-muted">{detail}</span>
       </span>
     </button>
   );

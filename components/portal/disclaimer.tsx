@@ -1,10 +1,14 @@
-import { Info } from "lucide-react";
+import { Kicker } from "@/components/ds/kicker";
 
+/**
+ * Footer colophon — the educational-only disclaimer that sits at the bottom
+ * of every page. Uses kicker styling in ink-faint for a quiet, journal-like
+ * close to the page.
+ */
 export function Disclaimer({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-8 flex items-start gap-3 rounded-lg border border-border bg-muted/50 px-4 py-3 text-xs text-muted-foreground">
-      <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-      <p>{children}</p>
-    </div>
+    <footer className="mt-12 border-t border-rule pt-6">
+      <Kicker className="text-ink-faint">{children}</Kicker>
+    </footer>
   );
 }

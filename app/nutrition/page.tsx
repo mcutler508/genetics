@@ -1,11 +1,13 @@
-import { Salad, ShieldAlert } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ShieldAlert } from "lucide-react";
 import { PageHeader } from "@/components/portal/page-header";
 import { Disclaimer } from "@/components/portal/disclaimer";
+import { FeatureCard, Plate, VellumCard } from "@/components/ds/card";
+import { Kicker } from "@/components/ds/kicker";
 import { nutritionArchetype } from "@/lib/mock-data";
 
 export default function NutritionPage() {
   const arch = nutritionArchetype;
+
   return (
     <>
       <PageHeader
@@ -14,98 +16,88 @@ export default function NutritionPage() {
         description={arch.tagline}
       />
 
-      <Card className="mb-6 overflow-hidden">
-        <div className="flex flex-col gap-6 px-6 py-6 md:flex-row md:items-start">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-            <Salad className="h-7 w-7" />
-          </div>
-          <div className="flex-1 space-y-3">
-            <p className="text-sm leading-relaxed text-foreground">
-              {arch.summary}
-            </p>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              <span className="font-medium text-foreground">Why this fits: </span>
-              {arch.whyItFits}
-            </p>
-          </div>
-        </div>
-      </Card>
+      {/* Hero: the archetype as the page's single feature */}
+      <FeatureCard className="rounded-2xl border border-rule">
+        <Kicker tone="accent">Your archetype</Kicker>
+        <h2 className="ds-title-1 mt-3 text-ink">
+          A measured approach to carbohydrate.
+        </h2>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink">
+          {arch.summary}
+        </p>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-muted">
+          <span className="ds-data text-ink">Why this fits — </span>
+          {arch.whyItFits}
+        </p>
+      </FeatureCard>
 
-      <div className="grid gap-5 md:grid-cols-2">
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="text-base">Core principles</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              {arch.corePrinciples.map((p) => (
-                <li key={p} className="flex items-start gap-3 text-sm">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  <span className="text-foreground">{p}</span>
-                </li>
+      {/* Core principles + context grid */}
+      <div className="mt-8 grid gap-5 md:grid-cols-2">
+        <VellumCard>
+          <Kicker tone="accent">Core principles</Kicker>
+          <ul className="mt-4 space-y-3">
+            {arch.corePrinciples.map((p, i) => (
+              <li key={p} className="flex items-start gap-3 text-sm">
+                <span className="kicker text-ink-faint mt-0.5 shrink-0">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="text-ink leading-relaxed">{p}</span>
+              </li>
+            ))}
+          </ul>
+        </VellumCard>
+
+        <VellumCard className="flex flex-col gap-5">
+          <div>
+            <Kicker tone="accent">Related biomarkers</Kicker>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {arch.relatedBiomarkers.map((b) => (
+                <span
+                  key={b}
+                  className="rounded-md border border-rule bg-canvas-deep px-2.5 py-1 text-xs text-ink"
+                >
+                  {b}
+                </span>
               ))}
-            </ul>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="text-base">Why this archetype</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm">
-            <div>
-              <p className="mb-1.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-                Related biomarkers
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {arch.relatedBiomarkers.map((b) => (
-                  <span
-                    key={b}
-                    className="rounded-md border border-border bg-muted/40 px-2 py-0.5 text-xs text-foreground"
-                  >
-                    {b}
-                  </span>
-                ))}
-              </div>
             </div>
-            <div>
-              <p className="mb-1.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-                Related genes
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {arch.relatedGenes.map((g) => (
-                  <span
-                    key={g}
-                    className="rounded-md border border-border bg-muted/40 px-2 py-0.5 text-xs font-mono text-foreground"
-                  >
-                    {g}
-                  </span>
-                ))}
-              </div>
+          </div>
+          <div>
+            <Kicker tone="accent">Related genes</Kicker>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {arch.relatedGenes.map((g) => (
+                <span
+                  key={g}
+                  className="ds-data rounded-md border border-rule bg-canvas-deep px-2.5 py-1 text-ink"
+                >
+                  {g}
+                </span>
+              ))}
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </VellumCard>
       </div>
 
-      <Card className="mt-5 border-chart-4/30 bg-chart-4/5">
-        <CardContent className="flex items-start gap-3 py-4">
-          <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-chart-5" />
-          <div>
-            <p className="text-sm font-medium text-foreground">
-              Cardiovascular optimization note
-            </p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              {arch.cardiovascularNote}
-            </p>
+      {/* Cardiovascular note as a Plate (no background, hairline above) */}
+      <div className="mt-8">
+        <Plate>
+          <div className="flex items-start gap-4">
+            <ShieldAlert className="mt-1 h-5 w-5 shrink-0 text-mark-clay" />
+            <div>
+              <Kicker tone="accent">Cardiovascular optimization note</Kicker>
+              <p className="mt-2 text-base leading-relaxed text-ink max-w-3xl">
+                {arch.cardiovascularNote}
+              </p>
+              <p className="kicker mt-5 text-ink-faint">
+                — Layered guidance · Applies on top of the archetype
+              </p>
+            </div>
           </div>
-        </CardContent>
-      </Card>
+        </Plate>
+      </div>
 
       <Disclaimer>
-        Nutrition guidance is general dietary education tailored to the
-        archetype in your report — not a meal plan, prescription, or clinical
-        diet. Consider working with a registered dietitian for individualized
-        planning.
+        Nutrition guidance is general dietary education tailored to your
+        archetype · Not a meal plan, prescription, or clinical diet
       </Disclaimer>
     </>
   );

@@ -1,7 +1,6 @@
-import { MessageCircleQuestion } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { PageHeader } from "@/components/portal/page-header";
 import { Disclaimer } from "@/components/portal/disclaimer";
+import { Kicker } from "@/components/ds/kicker";
 import { providerQuestions } from "@/lib/mock-data";
 
 export default function ProviderQuestionsPage() {
@@ -9,34 +8,32 @@ export default function ProviderQuestionsPage() {
     <>
       <PageHeader
         eyebrow="Visit Prep"
-        title="Provider questions"
-        description="A running list of questions sourced from your biomarkers, genetics, supplements, and recovery plan. Bring this to your next provider visit."
+        title="Six questions worth asking."
+        description="Sourced from your biomarkers, genetics, supplements, and recovery plan. Bring this to your next provider visit."
       />
 
-      <div className="space-y-3">
-        {providerQuestions.map((q) => (
-          <Card key={q.id}>
-            <CardContent className="flex items-start gap-4 py-4">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <MessageCircleQuestion className="h-4 w-4" />
-              </div>
-              <div className="flex-1">
-                <p className="text-sm leading-relaxed text-foreground">
-                  {q.question}
-                </p>
-                <p className="mt-2 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-                  Source: {q.source}
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+      <ol className="space-y-8">
+        {providerQuestions.map((q, idx) => (
+          <li
+            key={q.id}
+            className="grid gap-5 border-t border-rule pt-6 md:grid-cols-[60px_1fr]"
+          >
+            <div>
+              <p className="ds-numeric-L text-ink-faint">
+                {String(idx + 1).padStart(2, "0")}
+              </p>
+            </div>
+            <div>
+              <p className="ds-title-2 text-ink leading-snug">{q.question}</p>
+              <p className="kicker mt-4 text-ink-faint">Source · {q.source}</p>
+            </div>
+          </li>
         ))}
-      </div>
+      </ol>
 
       <Disclaimer>
-        These questions are starting points drawn from your blueprint. Add your
-        own, edit them, and share with your provider. This portal does not
-        provide answers — it organizes the discussion.
+        These questions are starting points drawn from your blueprint · This
+        portal does not provide answers — it organizes the discussion
       </Disclaimer>
     </>
   );
