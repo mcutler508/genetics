@@ -308,4 +308,13 @@
     0%, 100% { opacity: 0.6; }
     50% { opacity: 1; }
   }
+  @keyframes token-pulse {
+    0% {
+      background-color: color-mix(in oklch, var(--ds-accent) 20%, transparent);
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+
 }

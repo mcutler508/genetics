@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/portal/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeApplier } from "@/components/ds/theme-applier";
+import { ThemeEditor } from "@/components/ds/theme-editor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,12 +40,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background text-foreground">
+        <ThemeApplier />
         <TooltipProvider delayDuration={150}>
           <div className="flex min-h-screen">
             <Sidebar />
-            <main className="flex-1 px-6 py-10 md:px-14 md:py-14">
+            <main className="flex-1 min-w-0 px-6 py-10 md:px-14 md:py-14">
               <div className="mx-auto max-w-6xl">{children}</div>
             </main>
+            <ThemeEditor />
           </div>
         </TooltipProvider>
       </body>

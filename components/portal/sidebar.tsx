@@ -14,6 +14,7 @@ import {
   ShieldCheck,
   Microscope,
   CalendarCheck,
+  SlidersHorizontal,
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -50,6 +51,12 @@ const NAV_GROUPS: { label: string; items: NavItem[] }[] = [
       { href: "/reports", label: "Reports", icon: FileText },
       { href: "/privacy", label: "Privacy & Consent", icon: ShieldCheck },
       { href: "/upload", label: "Upload Report", icon: Upload },
+    ],
+  },
+  {
+    label: "Internal",
+    items: [
+      { href: "/style-guide", label: "Style Guide", icon: SlidersHorizontal },
     ],
   },
 ];
