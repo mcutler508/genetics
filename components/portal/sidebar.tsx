@@ -21,7 +21,6 @@ import { ThemeToggle } from "@/components/portal/theme-toggle";
 const nav = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
   { href: "/tracker", label: "12-Week Tracker", icon: CalendarCheck },
-  { href: "/upload", label: "Upload Report", icon: Upload },
   { href: "/systems", label: "Systems", icon: Activity },
   { href: "/biomarkers", label: "Biomarkers", icon: FlaskConical },
   { href: "/genetics", label: "Genetics", icon: Microscope },
@@ -34,6 +33,7 @@ const nav = [
   },
   { href: "/reports", label: "Reports", icon: FileText },
   { href: "/privacy", label: "Privacy & Consent", icon: ShieldCheck },
+  { href: "/upload", label: "Upload Report", icon: Upload },
 ];
 
 export function Sidebar() {
