@@ -1,13 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { derivePalette, type ThemeAnchors } from "@/lib/derive-palette";
 
 // ─────────────────────────────────────────────────────────────────
-// Token registry — the editable surface of the Periodical system.
-// Defaults mirror the values in app/globals.css (light mode).
-// Values are stored as hex (sRGB) — the CSS custom properties
-// accept any valid CSS color, and color-mix() handles oklch math
-// at the consumer side regardless of input format.
+// Token registry — names of the 22 derived tokens. Used by the
+// editor's inspector and CSS variable application. The values are
+// always derived from the 4 anchors below.
 // ─────────────────────────────────────────────────────────────────
 
 export type ThemeTokenId =
@@ -98,34 +97,43 @@ export const ALL_TOKENS: ThemeTokenId[] = TOKEN_GROUPS.flatMap((g) =>
   g.items.map((i) => i.id)
 );
 
-// Defaults as hex — derived from the OKLCH values in globals.css.
-export const DEFAULT_TOKENS: Record<ThemeTokenId, string> = {
-  canvas: "#F5EFE0",
-  "canvas-deep": "#EAE2CC",
-  vellum: "#FCF9F1",
-  "vellum-shaded": "#F0E8D3",
-  ink: "#2A2520",
-  "ink-muted": "#7C6E5C",
-  "ink-faint": "#A19383",
-  rule: "#D6CBB1",
-  "rule-strong": "#B8A98E",
-  accent: "#1F5B5E",
-  "accent-soft": "#D3E5E2",
-  "accent-deep": "#143F45",
-  "mark-ink": "#1F5B5E",
-  "mark-clay": "#B07343",
-  "mark-sage": "#86A480",
-  "mark-forest": "#5C8C5F",
-  "mark-graphite": "#7A7468",
-  "mark-terra": "#B05038",
-  "base-a": "#4A6DA0",
-  "base-c": "#B5754A",
-  "base-g": "#A8884A",
-  "base-t": "#6D8E6E",
-};
+// ─────────────────────────────────────────────────────────────────
+// Anchors — the 4 colors the user actually picks. Everything else
+// is derived. This is what eliminates ugly combos: you literally
+// can't pick 22 conflicting hexes anymore.
+// ─────────────────────────────────────────────────────────────────
 
-// Curated serif options. The first is the system default.
+export type AnchorId = "canvas" | "ink" | "accent" | "alarm";
+
+export const ANCHOR_LIST: { id: AnchorId; label: string; help: string }[] = [
+  {
+    id: "canvas",
+    label: "Canvas",
+    help: "Page background. Pick light for a paper feel, dark for a night feel.",
+  },
+  {
+    id: "ink",
+    label: "Ink",
+    help: "Primary text color. Should sit opposite the canvas (dark on light, light on dark).",
+  },
+  {
+    id: "accent",
+    label: "Accent",
+    help: "Brand color — drives active states, primary status, and the primary button.",
+  },
+  {
+    id: "alarm",
+    label: "Alarm",
+    help: "Elevated / out-of-range hue. Used sparingly for safety-critical signals.",
+  },
+];
+
+// ─────────────────────────────────────────────────────────────────
+// Fonts + radius
+// ─────────────────────────────────────────────────────────────────
+
 export type FontOptionId =
+  | "inter"
   | "fraunces"
   | "instrument-serif"
   | "eb-garamond"
@@ -144,6 +152,13 @@ export type FontOption = {
 };
 
 export const FONT_OPTIONS: FontOption[] = [
+  {
+    id: "inter",
+    label: "Inter",
+    family: "Inter",
+    googleParams: "Inter:wght@400;500;600;700",
+    feel: "Sans · modern clinical",
+  },
   {
     id: "fraunces",
     label: "Fraunces",
@@ -202,27 +217,153 @@ export const FONT_OPTIONS: FontOption[] = [
   },
 ];
 
-export const DEFAULT_FONT: FontOptionId = "fraunces";
-export const DEFAULT_RADIUS = 13.6; // 0.85rem at 16px base = 13.6px
+export const DEFAULT_RADIUS = 13.6; // 0.85rem at 16px
+
+// ─────────────────────────────────────────────────────────────────
+// Theme state — anchors + font + radius (everything else derived)
+// ─────────────────────────────────────────────────────────────────
 
 export type ThemeState = {
-  tokens: Record<ThemeTokenId, string>;
+  anchors: ThemeAnchors;
   font: FontOptionId;
   radius: number;
 };
 
-export const DEFAULT_THEME: ThemeState = {
-  tokens: { ...DEFAULT_TOKENS },
-  font: DEFAULT_FONT,
-  radius: DEFAULT_RADIUS,
+// ─────────────────────────────────────────────────────────────────
+// Curated presets — anchors only. The derivation guarantees harmony.
+// Contrast tuned for clear hierarchy in both modes.
+// ─────────────────────────────────────────────────────────────────
+
+export type ThemePresetId = "periodical" | "oxblood" | "inkwell" | "clinic";
+
+export type ThemePreset = {
+  id: ThemePresetId;
+  name: string;
+  tagline: string;
+  /** Preview swatches in display order: canvas, ink, accent, alarm. */
+  swatches: string[];
+  theme: ThemeState;
 };
 
+export const THEME_PRESETS: ThemePreset[] = [
+  {
+    id: "periodical",
+    name: "Periodical",
+    tagline: "Editorial · botanical · cream",
+    swatches: ["#EFE6CF", "#1A150F", "#0F5A60", "#A8442B"],
+    theme: {
+      anchors: {
+        canvas: "#EFE6CF", // warm cream, slightly deeper for hierarchy
+        ink: "#1A150F", // deep warm charcoal, high contrast
+        accent: "#0F5A60", // deep botanical teal, full presence
+        alarm: "#A8442B", // terracotta
+      },
+      font: "fraunces",
+      radius: 13.6,
+    },
+  },
+  {
+    id: "oxblood",
+    name: "Oxblood Library",
+    tagline: "Luxe wine · bone · serif",
+    swatches: ["#EFE3CC", "#1C100E", "#6E1F23", "#9C3F2D"],
+    theme: {
+      anchors: {
+        canvas: "#EFE3CC", // warm bone
+        ink: "#1C100E", // deep oxblood-tinted ink
+        accent: "#6E1F23", // deep wine
+        alarm: "#9C3F2D", // brick
+      },
+      font: "cormorant",
+      radius: 8,
+    },
+  },
+  {
+    id: "inkwell",
+    name: "Inkwell Night",
+    tagline: "Dark · paper ink · electric teal",
+    swatches: ["#13110E", "#F1EAD6", "#5BCBD6", "#E5825A"],
+    theme: {
+      anchors: {
+        canvas: "#13110E", // warm pitch
+        ink: "#F1EAD6", // paper cream
+        accent: "#5BCBD6", // electric teal, more saturation for dark
+        alarm: "#E5825A", // warm coral
+      },
+      font: "instrument-serif",
+      radius: 13.6,
+    },
+  },
+  {
+    id: "clinic",
+    name: "Clinic",
+    tagline: "Cool slate · vivid blue · sans",
+    swatches: ["#F8FAFC", "#0F172A", "#3B82F6", "#EF4444"],
+    theme: {
+      anchors: {
+        canvas: "#F8FAFC", // cool slate-50
+        ink: "#0F172A", // slate-900
+        accent: "#3B82F6", // blue-500
+        alarm: "#EF4444", // red-500
+      },
+      font: "inter",
+      radius: 8,
+    },
+  },
+];
+
+export const DEFAULT_THEME: ThemeState = THEME_PRESETS[0].theme;
+export const DEFAULT_FONT: FontOptionId = DEFAULT_THEME.font;
+export const DEFAULT_ANCHORS: ThemeAnchors = DEFAULT_THEME.anchors;
+
+export function getPreset(id: ThemePresetId): ThemePreset {
+  return THEME_PRESETS.find((p) => p.id === id) ?? THEME_PRESETS[0];
+}
+
 // ─────────────────────────────────────────────────────────────────
-// Persistence + URL encoding
+// Persistence + URL encoding (anchors-only format, v2)
 // ─────────────────────────────────────────────────────────────────
 
-const STORAGE_KEY = "blueprint-portal:theme:v1";
+const STORAGE_KEY = "blueprint-portal:theme:v2";
+const SAVED_THEMES_KEY = "blueprint-portal:saved-themes:v1";
 const URL_HASH_KEY = "theme";
+
+// ─────────────────────────────────────────────────────────────────
+// Saved themes — user-named theme snapshots persisted to localStorage.
+// Survive preset clicks; clickable like presets.
+// ─────────────────────────────────────────────────────────────────
+
+export type SavedTheme = {
+  id: string;
+  name: string;
+  createdAt: string; // ISO date
+  theme: ThemeState;
+};
+
+function safeReadSavedThemes(): SavedTheme[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(SAVED_THEMES_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter(
+      (t): t is SavedTheme =>
+        t && typeof t.id === "string" && typeof t.name === "string" && t.theme
+    );
+  } catch {
+    return [];
+  }
+}
+
+function safeWriteSavedThemes(items: SavedTheme[]) {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(SAVED_THEMES_KEY, JSON.stringify(items));
+  } catch {
+    /* ignore */
+  }
+}
 
 function safeReadStorage(): Partial<ThemeState> | null {
   if (typeof window === "undefined") return null;
@@ -240,14 +381,13 @@ function safeWriteStorage(theme: ThemeState) {
   try {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(theme));
   } catch {
-    // ignore quota errors
+    /* ignore */
   }
 }
 
 function encodeForUrl(theme: ThemeState): string {
-  const json = JSON.stringify(theme);
   if (typeof window === "undefined") return "";
-  // Use URL-safe base64
+  const json = JSON.stringify(theme);
   return btoa(unescape(encodeURIComponent(json)))
     .replace(/\+/g, "-")
     .replace(/\//g, "_")
@@ -256,7 +396,6 @@ function encodeForUrl(theme: ThemeState): string {
 
 function decodeFromUrl(encoded: string): Partial<ThemeState> | null {
   try {
-    // Reverse URL-safe base64
     const b64 =
       encoded.replace(/-/g, "+").replace(/_/g, "/") +
       "=".repeat((4 - (encoded.length % 4)) % 4);
@@ -283,22 +422,52 @@ function mergeTheme(
 ): ThemeState {
   if (!override) return base;
   return {
-    tokens: { ...base.tokens, ...(override.tokens ?? {}) },
+    anchors: { ...base.anchors, ...(override.anchors ?? {}) },
     font: (override.font as FontOptionId) ?? base.font,
     radius: typeof override.radius === "number" ? override.radius : base.radius,
   };
 }
 
 // ─────────────────────────────────────────────────────────────────
-// DOM application
+// DOM application — derive tokens from anchors, set CSS vars
 // ─────────────────────────────────────────────────────────────────
 
-function applyTokens(tokens: Record<ThemeTokenId, string>) {
+function applyTokens(anchors: ThemeAnchors) {
   if (typeof document === "undefined") return;
   const root = document.documentElement;
-  for (const [id, value] of Object.entries(tokens)) {
+  const palette = derivePalette(anchors);
+  for (const [id, value] of Object.entries(palette)) {
     root.style.setProperty(`--ds-${id}`, value);
   }
+  // Mirror DS tokens onto legacy shadcn surface so every component follows.
+  root.style.setProperty("--background", palette.canvas);
+  root.style.setProperty("--foreground", palette.ink);
+  root.style.setProperty("--card", palette.vellum);
+  root.style.setProperty("--card-foreground", palette.ink);
+  root.style.setProperty("--popover", palette.vellum);
+  root.style.setProperty("--popover-foreground", palette.ink);
+  root.style.setProperty("--primary", palette.accent);
+  root.style.setProperty("--primary-foreground", palette.vellum);
+  root.style.setProperty("--secondary", palette["vellum-shaded"]);
+  root.style.setProperty("--secondary-foreground", palette.ink);
+  root.style.setProperty("--muted", palette["vellum-shaded"]);
+  root.style.setProperty("--muted-foreground", palette["ink-muted"]);
+  root.style.setProperty("--accent", palette["accent-soft"]);
+  root.style.setProperty("--accent-foreground", palette["accent-deep"]);
+  root.style.setProperty("--border", palette.rule);
+  root.style.setProperty("--input", palette.rule);
+  root.style.setProperty("--ring", palette.accent);
+  root.style.setProperty("--destructive", palette["mark-terra"]);
+  root.style.setProperty("--sidebar", palette["vellum-shaded"]);
+  root.style.setProperty("--sidebar-foreground", palette.ink);
+  root.style.setProperty("--sidebar-primary", palette.accent);
+  root.style.setProperty("--sidebar-accent", palette["accent-soft"]);
+  root.style.setProperty(
+    "--sidebar-accent-foreground",
+    palette["accent-deep"]
+  );
+  root.style.setProperty("--sidebar-border", palette.rule);
+  root.style.setProperty("--sidebar-ring", palette.accent);
 }
 
 function applyRadius(radiusPx: number) {
@@ -333,7 +502,7 @@ function applyFont(fontId: FontOptionId) {
 }
 
 function applyTheme(theme: ThemeState) {
-  applyTokens(theme.tokens);
+  applyTokens(theme.anchors);
   applyFont(theme.font);
   applyRadius(theme.radius);
 }
@@ -344,32 +513,42 @@ function applyTheme(theme: ThemeState) {
 
 export function useTheme() {
   const [theme, setThemeState] = useState<ThemeState>(DEFAULT_THEME);
+  const [savedThemes, setSavedThemes] = useState<SavedTheme[]>([]);
   const [hydrated, setHydrated] = useState(false);
 
-  // Initial load: URL hash > localStorage > defaults
   useEffect(() => {
     const fromUrl = readUrlHash();
     const fromStorage = safeReadStorage();
-    const merged = mergeTheme(
-      DEFAULT_THEME,
-      fromUrl ?? fromStorage ?? null
-    );
+    const merged = mergeTheme(DEFAULT_THEME, fromUrl ?? fromStorage ?? null);
     setThemeState(merged);
     applyTheme(merged);
+    setSavedThemes(safeReadSavedThemes());
     setHydrated(true);
   }, []);
 
-  // Persist + apply on change
   useEffect(() => {
     if (!hydrated) return;
     applyTheme(theme);
     safeWriteStorage(theme);
   }, [theme, hydrated]);
 
-  const setToken = useCallback((id: ThemeTokenId, value: string) => {
+  // Listen for cross-tab / cross-hook storage updates so a save from one
+  // useTheme caller is seen by the other (ThemeApplier vs ThemeEditor).
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    function onStorage(e: StorageEvent) {
+      if (e.key === SAVED_THEMES_KEY) {
+        setSavedThemes(safeReadSavedThemes());
+      }
+    }
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
+
+  const setAnchor = useCallback((id: AnchorId, value: string) => {
     setThemeState((t) => ({
       ...t,
-      tokens: { ...t.tokens, [id]: value },
+      anchors: { ...t.anchors, [id]: value },
     }));
   }, []);
 
@@ -389,19 +568,52 @@ export function useTheme() {
     setThemeState(next);
   }, []);
 
+  const saveCurrentAs = useCallback(
+    (name: string) => {
+      const id = `custom-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+      const newItem: SavedTheme = {
+        id,
+        name: name.trim() || "Untitled",
+        createdAt: new Date().toISOString(),
+        theme: {
+          anchors: { ...theme.anchors },
+          font: theme.font,
+          radius: theme.radius,
+        },
+      };
+      const next = [newItem, ...savedThemes];
+      setSavedThemes(next);
+      safeWriteSavedThemes(next);
+      return id;
+    },
+    [theme, savedThemes]
+  );
+
+  const deleteSaved = useCallback(
+    (id: string) => {
+      const next = savedThemes.filter((s) => s.id !== id);
+      setSavedThemes(next);
+      safeWriteSavedThemes(next);
+    },
+    [savedThemes]
+  );
+
   return {
     theme,
     hydrated,
-    setToken,
+    savedThemes,
+    setAnchor,
     setFont,
     setRadius,
     reset,
     setTheme: setThemeReplace,
+    saveCurrentAs,
+    deleteSaved,
   };
 }
 
 // ─────────────────────────────────────────────────────────────────
-// Export helpers (used by editor panel)
+// Export helpers
 // ─────────────────────────────────────────────────────────────────
 
 export function buildShareUrl(theme: ThemeState): string {
@@ -416,11 +628,12 @@ export function buildJsonExport(theme: ThemeState): string {
 }
 
 export function buildCssExport(theme: ThemeState): string {
+  const palette = derivePalette(theme.anchors);
   const lines: string[] = [
     "/* Generated by Blueprint Portal theme editor */",
     ":root {",
   ];
-  for (const [id, value] of Object.entries(theme.tokens)) {
+  for (const [id, value] of Object.entries(palette)) {
     lines.push(`  --ds-${id}: ${value};`);
   }
   lines.push(`  --radius: ${(theme.radius / 16).toFixed(3)}rem;`);
