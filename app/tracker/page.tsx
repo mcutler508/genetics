@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/portal/page-header";
 import { Disclaimer } from "@/components/portal/disclaimer";
 import { DailyCheckin } from "@/components/portal/daily-checkin";
 import { WeekDetail } from "@/components/portal/week-detail";
-import { WeekTimeline } from "@/components/portal/week-timeline";
+import { WeekGantt } from "@/components/portal/week-gantt";
 import { Plate, VellumCard } from "@/components/ds/card";
 import { Kicker } from "@/components/ds/kicker";
 import { TabBar } from "@/components/ds/button";
@@ -84,8 +84,9 @@ export default function TrackerPage() {
       )}
 
       {tab === "twelve" && (
-        <div className="grid gap-5 lg:grid-cols-[1fr_2fr]">
-          <WeekTimeline
+        <div className="space-y-5">
+          <WeekGantt
+            cycleStartDate={customer.cycleStartDate}
             currentWeek={currentWeek}
             activeWeek={activeWeek}
             onSelect={(n) => setActiveWeek(n)}
