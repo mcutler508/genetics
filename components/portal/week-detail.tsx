@@ -1,11 +1,13 @@
 "use client";
 
-import { Check, Flag } from "lucide-react";
+import { Check, Flag, Sparkles } from "lucide-react";
 import { VellumCard } from "@/components/ds/card";
 import { Kicker } from "@/components/ds/kicker";
 import { cn } from "@/lib/utils";
 import {
   HABITS,
+  derivedTaskProgress,
+  isTaskComplete,
   lastNDates,
   type WeekTemplate,
 } from "@/lib/tracker-data";
@@ -14,6 +16,7 @@ import { useTracker } from "@/lib/use-tracker";
 type Props = {
   week: WeekTemplate;
   isCurrent: boolean;
+  cycleStartDate: string;
 };
 
 const MILESTONE_LABEL: Record<NonNullable<WeekTemplate["milestone"]>, string> = {
@@ -22,11 +25,12 @@ const MILESTONE_LABEL: Record<NonNullable<WeekTemplate["milestone"]>, string> = 
   recheck: "Recheck week",
 };
 
-export function WeekDetail({ week, isCurrent }: Props) {
+export function WeekDetail({ week, isCurrent, cycleStartDate }: Props) {
   const { hydrated, state, toggleTask, setWeekNote, getDay } = useTracker();
-  const taskState = state.weekTasks[week.number] ?? {};
   const noteValue = state.weekNotes[week.number] ?? "";
-  const completedTasks = week.tasks.filter((t) => taskState[t.id]).length;
+  const completedTasks = week.tasks.filter((t) =>
+    isTaskComplete(t, week.number, cycleStartDate, state)
+  ).length;
   const taskPct = Math.round((completedTasks / week.tasks.length) * 100);
 
   const last7 = lastNDates(7);
@@ -83,7 +87,82 @@ export function WeekDetail({ week, isCurrent }: Props) {
           <Kicker tone="accent">This week's tasks</Kicker>
           <ul className="mt-4 space-y-2">
             {week.tasks.map((t) => {
-              const on = !!taskState[t.id];
+              const complete = hydrated
+                ? isTaskComplete(t, week.number, cycleStartDate, state)
+                : false;
+              const progress = t.derived
+                ? derivedTaskProgress(
+                    t,
+                    week.number,
+                    cycleStartDate,
+                    state.dailyEntries
+                  )
+                : null;
+
+              if (t.derived && progress) {
+                const pct = Math.min(
+                  100,
+                  Math.round((progress.hit / progress.threshold) * 100)
+                );
+                return (
+                  <li key={t.id}>
+                    <div
+                      className={cn(
+                        "flex w-full items-start gap-3 rounded-lg border p-3 text-left",
+                        complete
+                          ? "border-[color:color-mix(in_oklch,var(--ds-mark-forest)_30%,transparent)] bg-[color:color-mix(in_oklch,var(--ds-mark-forest)_6%,transparent)]"
+                          : "border-rule bg-vellum"
+                      )}
+                    >
+                      <span
+                        className={cn(
+                          "mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border",
+                          complete
+                            ? "border-[var(--ds-mark-forest)] bg-[var(--ds-mark-forest)] text-[var(--ds-vellum)]"
+                            : "border-rule bg-vellum text-ink-faint"
+                        )}
+                      >
+                        {complete && (
+                          <Check className="h-3 w-3" strokeWidth={3} />
+                        )}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span
+                            className={cn(
+                              "text-sm leading-relaxed",
+                              complete ? "text-ink-muted" : "text-ink"
+                            )}
+                          >
+                            {t.label}
+                          </span>
+                          <span className="inline-flex items-center gap-1 rounded-sm border border-rule bg-canvas-deep/40 px-1.5 py-0.5 kicker text-ink-faint">
+                            <Sparkles className="h-2.5 w-2.5" />
+                            Auto-tracked
+                          </span>
+                        </div>
+                        <div className="mt-2 flex items-center gap-3">
+                          <div className="h-1 flex-1 overflow-hidden rounded-full bg-vellum-shaded">
+                            <div
+                              className={cn(
+                                "h-full rounded-full transition-all",
+                                complete
+                                  ? "bg-mark-forest"
+                                  : "bg-[var(--ds-accent)]"
+                              )}
+                              style={{ width: `${pct}%` }}
+                            />
+                          </div>
+                          <span className="ds-data text-[11px] text-ink-muted tabular-nums shrink-0">
+                            {progress.hit} of {progress.threshold} days
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                );
+              }
+
               return (
                 <li key={t.id}>
                   <button
@@ -93,7 +172,7 @@ export function WeekDetail({ week, isCurrent }: Props) {
                     className={cn(
                       "group flex w-full items-start gap-3 rounded-lg border p-3 text-left transition-all",
                       "disabled:cursor-not-allowed disabled:opacity-50",
-                      on
+                      complete
                         ? "border-[color:color-mix(in_oklch,var(--ds-accent)_30%,transparent)] bg-[color:color-mix(in_oklch,var(--ds-accent)_5%,transparent)]"
                         : "border-rule bg-vellum hover:border-[color:color-mix(in_oklch,var(--ds-accent)_30%,transparent)] hover:bg-canvas-deep/40"
                     )}
@@ -101,17 +180,19 @@ export function WeekDetail({ week, isCurrent }: Props) {
                     <span
                       className={cn(
                         "mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-colors",
-                        on
+                        complete
                           ? "border-[var(--ds-accent)] bg-[var(--ds-accent)] text-[var(--ds-vellum)]"
                           : "border-rule bg-vellum group-hover:border-[color:color-mix(in_oklch,var(--ds-accent)_60%,transparent)]"
                       )}
                     >
-                      {on && <Check className="h-3 w-3" strokeWidth={3} />}
+                      {complete && (
+                        <Check className="h-3 w-3" strokeWidth={3} />
+                      )}
                     </span>
                     <span
                       className={cn(
                         "text-sm leading-relaxed",
-                        on ? "text-ink-muted line-through" : "text-ink"
+                        complete ? "text-ink-muted line-through" : "text-ink"
                       )}
                     >
                       {t.label}

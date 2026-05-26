@@ -74,6 +74,20 @@ export function useTracker() {
     []
   );
 
+  const setAllHabits = useCallback(
+    (date: string, value: boolean) => {
+      setState((s) => {
+        const day: DailyEntry = {};
+        for (const h of HABITS) day[h.id] = value;
+        return {
+          ...s,
+          dailyEntries: { ...s.dailyEntries, [date]: day },
+        };
+      });
+    },
+    []
+  );
+
   const toggleTask = useCallback((weekNum: number, taskId: string) => {
     setState((s) => {
       const w = s.weekTasks[weekNum] ?? {};
@@ -112,6 +126,7 @@ export function useTracker() {
     state,
     hydrated,
     toggleHabit,
+    setAllHabits,
     toggleTask,
     setWeekNote,
     getDay,

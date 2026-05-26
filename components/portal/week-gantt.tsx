@@ -4,26 +4,15 @@ import { Flag } from "lucide-react";
 import { VellumCard } from "@/components/ds/card";
 import { Kicker } from "@/components/ds/kicker";
 import { cn } from "@/lib/utils";
-import { WEEKS } from "@/lib/tracker-data";
+import {
+  WEEKS,
+  PHASES,
+  isTaskComplete,
+  type CyclePhase,
+} from "@/lib/tracker-data";
 import { useTracker } from "@/lib/use-tracker";
 
-type Phase = {
-  id: string;
-  label: string;
-  startWeek: number;
-  endWeek: number;
-  tone: "accent" | "forest" | "clay" | "indigo" | "muted";
-};
-
-const PHASES: Phase[] = [
-  { id: "foundation", label: "Foundation", startWeek: 1, endWeek: 2, tone: "muted" },
-  { id: "nutrition", label: "Nutrition consistency", startWeek: 2, endWeek: 5, tone: "accent" },
-  { id: "recovery", label: "Recovery & sleep", startWeek: 4, endWeek: 8, tone: "indigo" },
-  { id: "movement", label: "Movement layering", startWeek: 7, endWeek: 9, tone: "forest" },
-  { id: "recheck", label: "Recheck prep", startWeek: 9, endWeek: 12, tone: "clay" },
-];
-
-const TONE_STYLES: Record<Phase["tone"], { bar: string; rail: string; text: string }> = {
+const TONE_STYLES: Record<CyclePhase["tone"], { bar: string; rail: string; text: string }> = {
   accent: {
     bar: "bg-[color:color-mix(in_oklch,var(--ds-accent)_55%,transparent)]",
     rail: "bg-[color:color-mix(in_oklch,var(--ds-accent)_18%,transparent)]",
@@ -167,8 +156,12 @@ export function WeekGantt({
                 0
               );
               const doneTasks = phaseWeeks.reduce((acc, w) => {
-                const ts = state.weekTasks[w.number] ?? {};
-                return acc + w.tasks.filter((t) => ts[t.id]).length;
+                return (
+                  acc +
+                  w.tasks.filter((t) =>
+                    isTaskComplete(t, w.number, cycleStartDate, state)
+                  ).length
+                );
               }, 0);
               const pct = totalTasks
                 ? Math.round((doneTasks / totalTasks) * 100)

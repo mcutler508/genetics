@@ -6,7 +6,9 @@ import { Disclaimer } from "@/components/portal/disclaimer";
 import { DailyCheckin } from "@/components/portal/daily-checkin";
 import { WeekDetail } from "@/components/portal/week-detail";
 import { WeekGantt } from "@/components/portal/week-gantt";
-import { Plate, VellumCard } from "@/components/ds/card";
+import { WeekProgressCard } from "@/components/portal/week-progress-card";
+import { CycleSummaryStrip } from "@/components/portal/cycle-summary-strip";
+import { Plate } from "@/components/ds/card";
 import { Kicker } from "@/components/ds/kicker";
 import { TabBar } from "@/components/ds/button";
 import { currentWeekNumber, WEEKS } from "@/lib/tracker-data";
@@ -44,26 +46,17 @@ export default function TrackerPage() {
       {tab === "today" && (
         <div className="grid gap-5 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <DailyCheckin />
+            <DailyCheckin
+              cycleStartDate={customer.cycleStartDate}
+              weekNumber={currentWeek}
+            />
           </div>
           <aside className="space-y-5">
-            <VellumCard>
-              <Kicker tone="accent">Current focus</Kicker>
-              <p className="ds-title-2 mt-2 text-ink">{week.theme}</p>
-              <p className="kicker mt-1 text-ink-faint">
-                Week {week.number} · {week.focus}
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-ink">
-                {week.description}
-              </p>
-              <button
-                type="button"
-                onClick={() => setTab("week")}
-                className="mt-4 text-xs font-medium text-mark-ink hover:underline"
-              >
-                Open weekly view →
-              </button>
-            </VellumCard>
+            <WeekProgressCard
+              week={week}
+              cycleStartDate={customer.cycleStartDate}
+              onOpenWeek={() => setTab("week")}
+            />
             <Plate>
               <Kicker tone="accent">Why this matters</Kicker>
               <p className="ds-title-2 mt-2 text-ink">
@@ -80,18 +73,31 @@ export default function TrackerPage() {
       )}
 
       {tab === "week" && (
-        <WeekDetail week={week} isCurrent={week.number === currentWeek} />
+        <WeekDetail
+          week={week}
+          isCurrent={week.number === currentWeek}
+          cycleStartDate={customer.cycleStartDate}
+        />
       )}
 
       {tab === "twelve" && (
         <div className="space-y-5">
+          <CycleSummaryStrip
+            cycleStartDate={customer.cycleStartDate}
+            cycleEndDate={customer.cycleEndDate}
+            currentWeek={currentWeek}
+          />
           <WeekGantt
             cycleStartDate={customer.cycleStartDate}
             currentWeek={currentWeek}
             activeWeek={activeWeek}
             onSelect={(n) => setActiveWeek(n)}
           />
-          <WeekDetail week={week} isCurrent={week.number === currentWeek} />
+          <WeekDetail
+            week={week}
+            isCurrent={week.number === currentWeek}
+            cycleStartDate={customer.cycleStartDate}
+          />
         </div>
       )}
 
